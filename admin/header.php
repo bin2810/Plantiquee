@@ -1,5 +1,10 @@
 <?php
-session_start();
+  session_start();
+  // var_dump($_SESSION['user']['Hinhanh']);
+  if (!isset($_SESSION['user']) || $_SESSION['user']['VaiTro'] !== 'admin') {
+    header("Location: ../index.php"); 
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -418,35 +423,41 @@ session_start();
                   <button class="dropdown-toggle bg-transparent border-0" type="button" id="profile"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <div class="profile-info">
+                      <?php
+                        if(isset($_SESSION['user']['name']) && isset($_SESSION['user']['Hinhanh'])){
+                          $avatar = "assets/images/".$_SESSION['user']['Hinhanh'];
+                          $fullname = $_SESSION['user']['name'];
+                        } else{
+                          $avatar = "assets/images/profile-1.png";
+                          $fullname = "hello";
+                        }
+
+                        
+                      ?>
                       <div class="info">
                         <div class="image">
-                          <img src="assets/images/profile/profile-image.png" alt="" />
+                          <img src="<?=$avatar?>" alt="" />
                         </div>
                         <div>
-                          <h6 class="fw-500">Phạm Hoàng Vũ</h6>
-                          <p>Admin</p>
+                          <h6 class="fw-500"><?=$fullname?></h6>
+                          <p></p>
                         </div>
                       </div>
                     </div>
                   </button>
                   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
                     <li>
+                      
                       <div class="author-info flex items-center !p-1">
                         <div class="image">
-                          <img src="assets/images/profile/profile-image.png" alt="image">
+                          <img src="<?=$avatar?>" alt="image">
                         </div>
                         <div class="content">
-                          <?php
-                            if(isset($_SESSION['user']['name'])){
-                          ?>
-                          <h4 class="text-sm"><?=$_SESSION['user']['name']?></h4>
-                          <?php
-                            } else{
-                          ?>
+                          
+                          <h4 class="text-sm"><?=$fullname?></h4>
+                          
                           <h4 class="text-sm"></h4>
-                          <?php
-                            }
-                          ?>
+                          
                           
                           <a class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs" href="#">Email@gmail.com</a>
                         </div>

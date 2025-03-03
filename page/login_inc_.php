@@ -3,7 +3,7 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $newusername = $_POST['Username'];
-        $password = $_POST['Password'];
+        $password = trim($_POST['Password']);
         // var_dump($newusername,$password);
 
         if(empty($newusername) || empty($password)){
@@ -33,27 +33,30 @@
             header('location: login.php?error=kt_tontai');
             exit();
         }else {
+            // var_dump($password);
+            // var_dump($user['Password']);
             if(password_verify($password, $user['Password'])){
+                
+                
                 session_start();
                 $_SESSION['user']['name'] = $user['Fullname'];
                 $_SESSION['user']['VaiTro'] = $user['VaiTro'];
+                $_SESSION['user']['Email'] = $user['Email'];
                 $_SESSION['user']['Hinhanh'] = $user['Hinhanh'];
                 
                 if(isset($_SESSION['user']['VaiTro']) && $_SESSION['user']['VaiTro'] == "user"){
-                    header('location: ../user_dashboard.php');
+                    header('location: ../page/user_dashboard.php');
                     exit();
                 } else{
-                    header('location: ../admin_dashboard.php');
-                    exit();
-                    
+                    header('location: ../admin/');
+                        exit();
+                    }
+                } else {
+                    // header('location: login.php?error=kt_password');
+                    // exit();
+                    echo"sai con mẹ nó rồi";
                 }
-             }else{
-                // header('location: login.php?error=kt_password');
-                // exit();
-                echo"sai con mẹ nó rồi";
             }
-        }
-        
     }
 
 ?>

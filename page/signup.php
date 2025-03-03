@@ -22,7 +22,7 @@
             <div class="container-full navbar">
             <div class="container-center nav">
                 <div class="nav-img">
-                <a href="index.php?act=home"><img src="../asset/img/logo.png" alt="" /></a>
+                <a href="../index.php"><img src="../asset/img/logo.png" alt="" /></a>
                 </div>
                 <i class="fa-solid fa-bars nav-bars show-tab-mobi" id="bars"></i>
                 <div class="nav-category bars-category">
@@ -164,7 +164,7 @@
                 </div>
                 <div class="nav-login">
                 <img class="nav-login-search hide-mobi hide-tablet" src="../asset/img/search.png" alt=""/>
-                    <a href="page/login.php"><img  class="nav-login-user hide-mobi hide-tablet" src="../asset/img/user.png" alt="" /></a>
+                    <a href="../page/login.php"><img  class="nav-login-user hide-mobi hide-tablet" src="../asset/img/user.png" alt="" /></a>
                 <div class="nav-cart">
                     <img src="../asset/img/cart.png" alt="" />
                     <div class="nav-cart-count">

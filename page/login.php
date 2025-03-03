@@ -164,7 +164,7 @@
                 </div>
                 <div class="nav-login">
                 <img class="nav-login-search hide-mobi hide-tablet" src="../asset/img/search.png" alt=""/>
-                    <a href="page/login.php"><img  class="nav-login-user hide-mobi hide-tablet" src="../asset/img/user.png" alt="" /></a>
+                    <a href="../page/login.php"><img  class="nav-login-user hide-mobi hide-tablet" src="../asset/img/user.png" alt="" /></a>
                 <div class="nav-cart">
                     <img src="../asset/img/cart.png" alt="" />
                     <div class="nav-cart-count">
