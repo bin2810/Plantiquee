@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thêm Sản Phẩm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #224229;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 300px;
+            color: #fff;
+        }
+        .container h2 {
+            text-align: center;
+            color: #fff;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            color: #ddd;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Thêm Sản Phẩm</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Tên sản phẩm</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Giá</label>
+                <input type="number" id="price" name="price" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Mô tả</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Thêm sản phẩm</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

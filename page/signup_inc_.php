@@ -61,7 +61,7 @@
             $query->bindParam(':Fullname' , $fullname);
             $query->bindParam(':Email' , $email);
             $query->bindParam(':Password' , $password_hashed);
-            $query->bindValue(':Hinhanh' , "avta.jpg");
+            $query->bindValue(':Hinhanh' , "avta_user_md.jpg");
             
             $query->execute();
 
