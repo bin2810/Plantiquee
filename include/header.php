@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="asset/css/resset.css"/>
     <link rel="stylesheet" href="asset/css/bass.css"/>
     <link rel="stylesheet" href="asset/css/main.css"/>
-    <link rel="stylesheet" href="asset/css/responsive.css" />
+    <link rel="stylesheet" href="asset/css/Caytrong.css" />
     <link rel="stylesheet" href="asset/css/dashboard.css"/>
     <link rel="stylesheet" href="asset/css/responsive.css" />
     
@@ -23,7 +23,7 @@
     <div class="big">
       <header>
         <div class="container-full poromo-banner">
-          <p>Welcome to Plantique</p>
+          <p>Welcome to Plantiquee</p>
         </div>
         <div class="container-full navbar">
           <div class="container-center nav">

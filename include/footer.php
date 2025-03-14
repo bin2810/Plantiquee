@@ -51,6 +51,6 @@
     <script src="asset/js/main.js"></script>
     <script src="asset/js/navbar.js"></script>
     <script src="asset/js/bars.js"></script>
-    <script src="asset/js/login.js" defer></script>
+    <script src="asset/js/login.js"></script>
   </body>
 </html>

@@ -17,6 +17,7 @@
 
     <!-- ========== All CSS files linkup ========= -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="assets/css/lineicons.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="assets/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="assets/css/fullcalendar.css" />
@@ -31,9 +32,9 @@
     <!-- ======== Preloader =========== -->
 
     <!-- ======== sidebar-nav start =========== -->
-    <aside class="sidebar-nav-wrapper">
+    <aside class="sidebar-nav-wrapper" >
       <div class="navbar-logo">
-        <a href="index.php">
+        <a href="../index.php">
           <img src="assets/images/logo.png" alt="logo" width="100%"/>
         </a>
       </div>
@@ -185,8 +186,9 @@
               </li>
             </ul>
           </li>
+          
           <li class="nav-item">
-            <a href="tables.html">
+            <a href="danhsach_user.php">
               <span class="icon">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -197,7 +199,53 @@
                     d="M2.5 16.875C2.15483 16.875 1.875 17.1548 1.875 17.5C1.875 17.8452 2.15483 18.125 2.5 18.125H17.5C17.8452 18.125 18.125 17.8452 18.125 17.5C18.125 17.1548 17.8452 16.875 17.5 16.875H2.5Z" />
                 </svg>
               </span>
-              <span class="text">Tables</span>
+              <span class="text">User</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="danhsach_danhmuc_chinh.php">
+              <span class="icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M1.66666 4.16667C1.66666 3.24619 2.41285 2.5 3.33332 2.5H16.6667C17.5872 2.5 18.3333 3.24619 18.3333 4.16667V9.16667C18.3333 10.0872 17.5872 10.8333 16.6667 10.8333H3.33332C2.41285 10.8333 1.66666 10.0872 1.66666 9.16667V4.16667Z" />
+                  <path
+                    d="M1.875 13.75C1.875 13.4048 2.15483 13.125 2.5 13.125H17.5C17.8452 13.125 18.125 13.4048 18.125 13.75C18.125 14.0952 17.8452 14.375 17.5 14.375H2.5C2.15483 14.375 1.875 14.0952 1.875 13.75Z" />
+                  <path
+                    d="M2.5 16.875C2.15483 16.875 1.875 17.1548 1.875 17.5C1.875 17.8452 2.15483 18.125 2.5 18.125H17.5C17.8452 18.125 18.125 17.8452 18.125 17.5C18.125 17.1548 17.8452 16.875 17.5 16.875H2.5Z" />
+                </svg>
+              </span>
+              <span class="text">Danh Mục Chính</span>
+            </a>
+          </li>
+         
+          <li class="nav-item">
+            <a href="danhsach_danhmuc_con.php">
+              <span class="icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M1.66666 4.16667C1.66666 3.24619 2.41285 2.5 3.33332 2.5H16.6667C17.5872 2.5 18.3333 3.24619 18.3333 4.16667V9.16667C18.3333 10.0872 17.5872 10.8333 16.6667 10.8333H3.33332C2.41285 10.8333 1.66666 10.0872 1.66666 9.16667V4.16667Z" />
+                  <path
+                    d="M1.875 13.75C1.875 13.4048 2.15483 13.125 2.5 13.125H17.5C17.8452 13.125 18.125 13.4048 18.125 13.75C18.125 14.0952 17.8452 14.375 17.5 14.375H2.5C2.15483 14.375 1.875 14.0952 1.875 13.75Z" />
+                  <path
+                    d="M2.5 16.875C2.15483 16.875 1.875 17.1548 1.875 17.5C1.875 17.8452 2.15483 18.125 2.5 18.125H17.5C17.8452 18.125 18.125 17.8452 18.125 17.5C18.125 17.1548 17.8452 16.875 17.5 16.875H2.5Z" />
+                </svg>
+              </span>
+              <span class="text">Danh Mục Con</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="danhsach_sanpham.php">
+              <span class="icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M1.66666 4.16667C1.66666 3.24619 2.41285 2.5 3.33332 2.5H16.6667C17.5872 2.5 18.3333 3.24619 18.3333 4.16667V9.16667C18.3333 10.0872 17.5872 10.8333 16.6667 10.8333H3.33332C2.41285 10.8333 1.66666 10.0872 1.66666 9.16667V4.16667Z" />
+                  <path
+                    d="M1.875 13.75C1.875 13.4048 2.15483 13.125 2.5 13.125H17.5C17.8452 13.125 18.125 13.4048 18.125 13.75C18.125 14.0952 17.8452 14.375 17.5 14.375H2.5C2.15483 14.375 1.875 14.0952 1.875 13.75Z" />
+                  <path
+                    d="M2.5 16.875C2.15483 16.875 1.875 17.1548 1.875 17.5C1.875 17.8452 2.15483 18.125 2.5 18.125H17.5C17.8452 18.125 18.125 17.8452 18.125 17.5C18.125 17.1548 17.8452 16.875 17.5 16.875H2.5Z" />
+                </svg>
+              </span>
+              <span class="text">Sản Phẩm</span>
             </a>
           </li>
           <span class="divider"><hr /></span>
@@ -351,11 +399,16 @@
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <div class="profile-info">
                       <?php
-                        if(isset($_SESSION['user']['name']) && isset($_SESSION['user']['Hinhanh'])){
+                        if( isset($_SESSION['user']['id']) && isset($_SESSION['user']['name']) && isset($_SESSION['user']['Hinhanh'])  ){
+                          // var_dump($_SESSION['id']['User_id']);
+                          $user_id = $_SESSION['user']['id'];
                           $avatar = "assets/images/".$_SESSION['user']['Hinhanh'];
                           $fullname = $_SESSION['user']['name'];
                         } else{
-                          $avatar = "assets/images/profile-1.png";
+                          // var_dump($_SESSION['user']);
+
+                          // $user_id = null;
+                          $avatar = "assets/images/avta_login.jpg";
                           $fullname = "hello";
                         }
 
@@ -392,7 +445,7 @@
                     </li>
                     <li class="divider"></li>
                     <li>
-                      <a href="settings_user_admin.php">
+                      <a href="settings_user_admin.php?=<?=$user_id?>">
                         <i class="lni lni-user"></i>Xem Hồ Sơ
                       </a>
                     </li>

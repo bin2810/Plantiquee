@@ -52,7 +52,6 @@
             header('location: login.php?error=kt_tontai');
             exit();
         }else {
-            $password_hashed = password_hash($password, PASSWORD_DEFAULT);
             $query = $conn->prepare('
                 INSERT INTO tb_user ( Username , Fullname , Email , Password , Hinhanh)
                 VALUES (:Username , :Fullname , :Email , :Password , :Hinhanh)
@@ -60,8 +59,8 @@
             $query->bindParam(':Username' , $newusername);
             $query->bindParam(':Fullname' , $fullname);
             $query->bindParam(':Email' , $email);
-            $query->bindParam(':Password' , $password_hashed);
-            $query->bindValue(':Hinhanh' , "avta_user_md.jpg");
+            $query->bindParam(':Password' , $password);
+            $query->bindValue(':Hinhanh' , "avta_md_user.jpg");
             
             $query->execute();
 

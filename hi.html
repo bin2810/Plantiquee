@@ -1,79 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Thêm Sản Phẩm</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bộ Lọc Sản Phẩm</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background-color: #224229;
+            background-color: #f8f6ef;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+        }
+        .filter-container {
             width: 300px;
-            color: #fff;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
         }
-        .container h2 {
-            text-align: center;
-            color: #fff;
+        .filter-section {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
         }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            color: #ddd;
-        }
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        .form-group textarea {
-            resize: vertical;
-        }
-        .form-group button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
+        .filter-header {
+            font-weight: bold;
             cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .form-group button:hover {
-            background-color: #0056b3;
+        .filter-header i {
+            transition: transform 0.3s;
+        }
+        .filter-content {
+            display: none;
+            padding-top: 10px;
+        }
+        .filter-content label {
+            display: block;
+            margin: 5px 0;
+        }
+        .filter-button {
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #555;
+            cursor: pointer;
+            margin-top: 15px;
+            background-color: white;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Thêm Sản Phẩm</h2>
-        <form>
-            <div class="form-group">
-                <label for="name">Tên sản phẩm</label>
-                <input type="text" id="name" name="name" required>
+    <div class="filter-container">
+        <div class="filter-section">
+            <div class="filter-header">ÁNH SÁNG TRONG NHÀ <i class="arrow">▼</i></div>
+            <div class="filter-content">
+                <label><input type="checkbox"> Ánh sáng yếu / Nhân tạo</label>
+                <label><input type="checkbox"> Ánh sáng gián tiếp</label>
+                <label><input type="checkbox"> Ánh sáng trực tiếp</label>
             </div>
-            <div class="form-group">
-                <label for="price">Giá</label>
-                <input type="number" id="price" name="price" required>
+        </div>
+        <div class="filter-section">
+            <div class="filter-header">KÍCH THƯỚC CÂY <i class="arrow">▼</i></div>
+            <div class="filter-content">
+                <label><input type="checkbox"> XS (5"-12")</label>
+                <label><input type="checkbox"> SM (7"-18")</label>
+                <label><input type="checkbox"> MD (1-2 FT)</label>
+                <label><input type="checkbox"> LG (1.5-2.5 FT)</label>
+                <label><input type="checkbox"> XL (2-3 FT)</label>
+                <label><input type="checkbox"> XXL (3-5 FT)</label>
             </div>
-            <div class="form-group">
-                <label for="description">Mô tả</label>
-                <textarea id="description" name="description" rows="4" required></textarea>
+        </div>
+        <div class="filter-section">
+            <div class="filter-header">ĐỘ KHÓ <i class="arrow">▼</i></div>
+            <div class="filter-content">
+                <label><input type="checkbox"> Dễ</label>
+                <label><input type="checkbox"> Trung bình</label>
+                <label><input type="checkbox"> Khó</label>
             </div>
-            <div class="form-group">
-                <button type="submit">Thêm sản phẩm</button>
-            </div>
-        </form>
+        </div>
+        <div class="filter-button">XÓA BỘ LỌC</div>
     </div>
+    <script>
+        $(document).ready(function () {
+            $(".filter-header").click(function () {
+                $(this).next(".filter-content").slideToggle();
+                $(this).find(".arrow").toggleClass("open");
+            });
+            
+            $(".filter-button").click(function () {
+                $("input[type=checkbox]").prop("checked", false);
+            });
+        });
+    </script>
 </body>
 </html>

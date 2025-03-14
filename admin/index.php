@@ -1,9 +1,9 @@
 <?php
-  include('header.php');
+  include_once('header.php');
 ?>
 <?php
-  include('main.php')
+  include_once('main.php')
 ?>
 <?php
-  include('footer.php')
+  include_once('footer.php')
 ?>

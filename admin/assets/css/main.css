@@ -1722,7 +1722,7 @@ h6,
   color: #365CF5;
 }
 .table .lead-info {
-  min-width: 200px;
+  min-width: 100px;
 }
 .table .lead-email {
   min-width: 150px;
@@ -1732,7 +1732,7 @@ h6,
   min-width: 160px;
 }
 .table .lead-company {
-  min-width: 180px;
+  min-width: 50px;
 }
 .table .referrals-image {
   min-width: 150px;
@@ -1759,6 +1759,7 @@ h6,
   overflow: hidden;
   margin-right: 15px;
 }
+
 .table .lead .lead-image img {
   width: 100%;
 }

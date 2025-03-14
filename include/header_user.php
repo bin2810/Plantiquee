@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../asset/css/resset.css"/>
     <link rel="stylesheet" href="../asset/css/bass.css"/>
     <link rel="stylesheet" href="../asset/css/main.css"/>
+    <link rel="stylesheet" href="../asset/css/login.css"/>
     <link rel="stylesheet" href="../asset/css/responsive.css" />
     <link rel="stylesheet" href="../asset/css/dashboard.css"/>
     <link rel="stylesheet" href="../asset/css/responsive.css" />
@@ -175,7 +176,7 @@
                       $avatar = "../asset/img/user.png"; 
                   }
 
-                  $dashboard_link = "page/login.php"; 
+                  $dashboard_link = "../page/login.php"; 
 
                   if (isset($_SESSION['user']) && isset($_SESSION['user']['VaiTro'])) {
                       $dashboard_link = ($_SESSION['user']['VaiTro'] == 'admin') ? '../admin' : 'user_dashboard.php';

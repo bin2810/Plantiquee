@@ -280,6 +280,8 @@ main{
 }
 .product-item-col-img{
   width: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
 }
 .discount::before{
   position: absolute;

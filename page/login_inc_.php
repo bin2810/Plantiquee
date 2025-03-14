@@ -21,7 +21,7 @@
         }
 
         $query = $conn -> prepare('
-            SELECT Username, Fullname , Password , VaiTro , Hinhanh
+            SELECT User_id, Username, Fullname , Password , VaiTro , Hinhanh ,Email
             FROM tb_user
             WHERE Username = :Username
         ');
@@ -33,16 +33,20 @@
             header('location: login.php?error=kt_tontai');
             exit();
         }else {
-            // var_dump($password);
-            // var_dump($user['Password']);
-            if(password_verify($password, $user['Password'])){
-                
-                
+            if($password == $user['Password']){ 
                 session_start();
+                $_SESSION['user']['id'] = $user['User_id'];
                 $_SESSION['user']['name'] = $user['Fullname'];
                 $_SESSION['user']['VaiTro'] = $user['VaiTro'];
                 $_SESSION['user']['Email'] = $user['Email'];
                 $_SESSION['user']['Hinhanh'] = $user['Hinhanh'];
+
+                var_dump($_SESSION['user']['id']);
+                var_dump($_SESSION['user']['name']);
+                var_dump($_SESSION['user']['VaiTro']);
+                var_dump($_SESSION['user']['Email']);
+                var_dump($_SESSION['user']['Hinhanh']);
+                
                 
                 if(isset($_SESSION['user']['VaiTro']) && $_SESSION['user']['VaiTro'] == "user"){
                     header('location: ../page/user_dashboard.php');
@@ -52,11 +56,10 @@
                         exit();
                     }
                 } else {
-                    // header('location: login.php?error=kt_password');
-                    // exit();
-                    echo"sai con mẹ nó rồi";
+                    echo"sai rồi đó";
                 }
             }
+        
     }
 
 ?>
