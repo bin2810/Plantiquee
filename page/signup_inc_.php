@@ -11,28 +11,28 @@
         // var_dump($newusername,$fullname,$email,$password,$passwordrepeat);
         
         if(empty($newusername) || empty($fullname) || empty($email) || empty($password)|| empty($passwordrepeat)){
-            header("location: signup.php?error=kt_input_trong");
+            header("location: ../index.php?act=signup&error=kt_input_trong");
             exit();
         } else {
             if(strlen($newusername) < 4 || strlen($newusername) > 50){
-                header('location: signup.php?error=kt_kytu_user');
+                header('location: ../index.php?act=signup&error=kt_kytu_user');
                 exit();
             }
             if(strlen($password) < 4 || strlen($password) > 50){
-                header('location: signup.php?error=kt_kytu_pass');
+                header('location: ../index.php?act=signup&error=kt_kytu_pass');
                 exit();
             }
             if(is_numeric($fullname)){
-                header('location: signup.php?error=kt_tenso');
+                header('location: ../index.php?act=signup&error=kt_tenso');
                 exit();
             }
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                header('location: signup.php?error=kt_email_sai');
+                header('location: ../index.php?act=signup&error=kt_email_sai');
                 exit();
             }
             
             if($password !== $passwordrepeat){
-                header('location: signup.php?error=kt_nhaplaipass');
+                header('location: ../index.php?act=signup&error=kt_nhaplaipass');
                 exit();
             }
         }
@@ -49,7 +49,7 @@
 
 
         if($user){
-            header('location: login.php?error=kt_tontai');
+            header('location: ../index.php?act=signup&error=kt_tontai');
             exit();
         }else {
             $query = $conn->prepare('
@@ -64,7 +64,7 @@
             
             $query->execute();
 
-            header('location: login.php');
+            header('location: ../index.php?act=login');
             exit();
         }
     }

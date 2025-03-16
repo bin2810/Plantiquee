@@ -7,19 +7,9 @@
         // var_dump($newusername,$password);
 
         if(empty($newusername) || empty($password)){
-            header("location: login.php?error=kt_input_trong");
+            header("location: ../index.php?act=login&error=kt_input_trong");
             exit();
-        } else {
-            if(strlen($newusername) < 4 || strlen($newusername) > 50){
-                header('location: login.php?error=kt_kytu_user');
-                exit();
-            }
-            if(strlen($password) < 4 || strlen($password) > 50){
-                header('location: login.php?error=kt_kytu_pass');
-                exit();
-            }
         }
-
         $query = $conn -> prepare('
             SELECT User_id, Username, Fullname , Password , VaiTro , Hinhanh ,Email
             FROM tb_user
@@ -30,7 +20,7 @@
         $user = $query ->fetch(PDO::FETCH_ASSOC);
 
         if(!$user){
-            header('location: login.php?error=kt_tontai');
+            header('location: ../index.php?act=login&error=kt_tontai');
             exit();
         }else {
             if($password == $user['Password']){ 
@@ -49,16 +39,17 @@
                 
                 
                 if(isset($_SESSION['user']['VaiTro']) && $_SESSION['user']['VaiTro'] == "user"){
-                    header('location: ../page/user_dashboard.php');
+                    header('location: ../index.php?act=dashboard');
                     exit();
                 } else{
                     header('location: ../admin/');
                         exit();
                     }
-                } else {
-                    echo"sai rồi đó";
-                }
+            } else {
+                header("location: ../index.php?act=login&error=kt_sai_pass");
+                exit();
             }
+        }
         
     }
 

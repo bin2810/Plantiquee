@@ -1,11 +1,19 @@
 
+<?php
+  include_once('include/database.php');
+  $monqua = "SELECT * FROM tb_sanpham WHERE MA_DM_con = 'BCN'";
+  $stmt = $conn ->prepare($monqua);
+  $stmt->execute();
+
+  $Banchaynhat = $stmt ->fetchAll(PDO::FETCH_ASSOC)
+?>
         <div class="container-full banner">
           <div class="banner-img">
-            <img src="asset/img/banner.jpg" alt="" />
+            <img src="asset/img/banner1.jpg" alt="" />
             <div class="baner-img-content">
               <p>THÊM CÂY XANH THÊM BÌNH YÊN</p>
               <p>MỘT CHẬU CÂY NHỎ CÓ THỂ THAY ĐỔI MOOD CỦA BẠN</p>
-              <p><a href="">CÂY TRỒNG</a></p>
+              <p><a href="index.php?act=Caytrong">CÂY TRỒNG</a></p>
             </div>
           </div>
         </div>
@@ -20,7 +28,6 @@
               <li class="product-item-col">
                 <div class="product-item-col-img discount">
                   <img src="asset/img/trucmay.jpg" alt="" />
-
                   <button class="btnaddcart">Thêm Vào Giõ Hàng</button>
                 </div>
                 <div class="product-item-col-information">
@@ -280,29 +287,38 @@
           </div>
           <div class="product-list">
             <ul class="product-item">
+              <?php
+                foreach ($Banchaynhat as $BCN) {
+              ?>
               <li class="product-item-col">
                 <div class="product-item-col-img discount">
-                  <img src="asset/img/trucmay.jpg" alt="" />
-
+                  <?php
+                    $img_sp = explode('|', $BCN['HinhAnh']);
+                  ?>
+                  <img src="asset/img/sanpham/<?=$BCN['MA_DM_con']?>/<?=$BCN['TenSP']?>/<?=$img_sp[0]?>" alt="" />
                   <button class="btnaddcart">Thêm Vào Giõ Hàng</button>
                 </div>
                 <div class="product-item-col-information">
                   <div class="product-item-col-information-col-left">
-                    <p>Trúc Mây</p>
+                    <p><?=$BCN['TenSP']?></p>
                     <p>Màu vàng</p>
+                    
                     <div class="radio-container">
+                    <?php
+                      $name_color = explode(',', $BCN['Ten_Mau_Sac']);
+                      $code_color = explode(',', $BCN['Ma_Mau_Sac']);
+                     
+                      foreach ($name_color as $index => $tenmau) {
+                      
+                      $mamau = isset($code_color[$index]) ? $code_color[$index] : '#000';
+                    ?>
                       <label class="radio">
-                        <input type="radio" name="color" value="gray" checked />
-                        <div class="circle"></div>
+                      <input type="radio" name="color" value="<?=$tenmau?>" <?= $index == 0 ? 'checked' : '' ?> />
+                        <div style="background-color: <?=$mamau?> ;" class="circle"></div>
                       </label>
-                      <label class="radio">
-                        <input type="radio" name="color" value="brown" />
-                        <div class="circle"></div>
-                      </label>
-                      <label class="radio">
-                        <input type="radio" name="color" value="blue" />
-                        <div class="circle"></div>
-                      </label>
+                      <?php
+                      }
+                      ?>
                     </div>
                   </div>
                   <div class="product-item-col-information-col-right">
@@ -311,142 +327,11 @@
                   </div>
                 </div>
               </li>
-              <li class="product-item-col">
-                <div class="product-item-col-img new">
-                  <img src="asset/img/traubanammy.jpg" alt="" />
-                  <button class="btnaddcart">Thêm Vào Giõ Hàng</button>
-                </div>
-                <div class="product-item-col-information">
-                  <div class="product-item-col-information-col-left">
-                    <p>Trầu Bà Nam Mỹ</p>
-                    <p>Màu vàng</p>
-                    <p>yếu</p>
-                  </div>
-                  <div class="product-item-col-information-col-right">
-                    <p>1200 VND</p>
-                    <p>Lớn</p>
-                  </div>
-                </div>
-              </li>
-              <li class="product-item-col">
-                <div class="product-item-col-img new">
-                  <img src="asset/img/kimngan.jpg" alt="" />
-                  <button class="btnaddcart">Thêm Vào Giõ Hàng</button>
-                </div>
-                <div class="product-item-col-information">
-                  <div class="product-item-col-information-col-left">
-                    <p>Cây Kim Ngân</p>
-                    <p>Màu vàng</p>
-                    <p>yếu</p>
-                  </div>
-                  <div class="product-item-col-information-col-right">
-                    <p>1200 VND</p>
-                    <p>Lớn</p>
-                  </div>
-                </div>
-              </li>
-              <li class="product-item-col">
-                <div class="product-item-col-img">
-                  <img src="asset/img/bobasongkhoe.jpg" alt="" />
-                  <button class="btnaddcart">Thêm Vào Giõ Hàng</button>
-                </div>
-                <div class="product-item-col-information">
-                  <div class="product-item-col-information-col-left">
-                    <p>Bộ Ba Sống Khoẻ</p>
-                    <p>Màu vàng</p>
-                    <p>yếu</p>
-                  </div>
-                  <div class="product-item-col-information-col-right">
-                    <p>1200 VND</p>
-                    <p>Lớn</p>
-                  </div>
-                </div>
-              </li>
-              <li class="product-item-col hide-product">
-                <div class="product-item-col-img">
-                  <img src="asset/img/trucmay.jpg" alt="" />
-                  <button class="btnaddcart">Thêm Vào Giõ Hàng</button>
-                </div>
-                <div class="product-item-col-information">
-                  <div class="product-item-col-information-col-left">
-                    <p>Trúc Mây</p>
-                    <p>Màu vàng</p>
-                    <p>yếu</p>
-                  </div>
-                  <div class="product-item-col-information-col-right">
-                    <p>1200 VND</p>
-                    <p>Lớn</p>
-                  </div>
-                </div>
-              </li>
-              <li class="product-item-col hide-product">
-                <div class="product-item-col-img">
-                  <img src="asset/img/trucmay.jpg" alt="" />
-                  <button class="btnaddcart">Thêm Vào Giõ Hàng</button>
-                </div>
-                <div class="product-item-col-information">
-                  <div class="product-item-col-information-col-left">
-                    <p>Trúc Mây</p>
-                    <p>Màu vàng</p>
-                    <p>yếu</p>
-                  </div>
-                  <div class="product-item-col-information-col-right">
-                    <p>1200 VND</p>
-                    <p>Lớn</p>
-                  </div>
-                </div>
-              </li>
-              <li class="product-item-col hide-product">
-                <div class="product-item-col-img">
-                  <img src="asset/img/trucmay.jpg" alt="" />
-                  <button class="btnaddcart">Thêm Vào Giõ Hàng</button>
-                </div>
-                <div class="product-item-col-information">
-                  <div class="product-item-col-information-col-left">
-                    <p>Trúc Mây</p>
-                    <p>Màu vàng</p>
-                    <p>yếu</p>
-                  </div>
-                  <div class="product-item-col-information-col-right">
-                    <p>1200 VND</p>
-                    <p>Lớn</p>
-                  </div>
-                </div>
-              </li>
-              <li class="product-item-col hide-product">
-                <div class="product-item-col-img">
-                  <img src="asset/img/trucmay.jpg" alt="" />
-                  <button class="btnaddcart">Thêm Vào Giõ Hàng</button>
-                </div>
-                <div class="product-item-col-information">
-                  <div class="product-item-col-information-col-left">
-                    <p>Trúc Mây</p>
-                    <p>Màu vàng</p>
-                    <p>yếu</p>
-                  </div>
-                  <div class="product-item-col-information-col-right">
-                    <p>1200 VND</p>
-                    <p>Lớn</p>
-                  </div>
-                </div>
-              </li>
-              <li class="product-item-col hide-product">
-                <div class="product-item-col-img">
-                  <img src="asset/img/trucmay.jpg" alt="" />
-                  <button class="btnaddcart">Thêm Vào Giõ Hàng</button>
-                </div>
-                <div class="product-item-col-information">
-                  <div class="product-item-col-information-col-left">
-                    <p>Trúc Mây</p>
-                    <p>Màu vàng</p>
-                    <p>yếu</p>
-                  </div>
-                  <div class="product-item-col-information-col-right">
-                    <p>1200 VND</p>
-                    <p>Lớn</p>
-                  </div>
-                </div>
-              </li>
+              <?php
+                }
+              ?>
+
+
             </ul>
           </div>
         </div>

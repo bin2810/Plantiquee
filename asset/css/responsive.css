@@ -2,6 +2,7 @@
   .container-center {
     width: 1200px;
     margin: 0 auto;
+    transition: width 0.3s ease-in-out;
   }
   main{
     margin: 5rem 0;
@@ -236,7 +237,7 @@
     width: 100%;
   }
   .product-item-col-img img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
   }
   .hide-product {
@@ -400,6 +401,9 @@
     flex: 0 0 auto;
     width: 60%;
   }
+  .product-item-col:nth-child(n) {
+    display: block; /* Hiển thị hết mọi sản phẩm */
+  }
   .interest-title p {
     font-size: 2.8rem !important;
     line-height: 5rem;
@@ -509,5 +513,4 @@
     grid-template-columns: auto auto;
     padding: 2rem 0;
   }
-  
 }

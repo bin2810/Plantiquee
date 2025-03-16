@@ -1,7 +1,40 @@
-<?php
-    include_once('../include/header_user.php');
-?>
+
     <main>
+    <?php
+            $error_message = '';
+            if (isset($_GET['error'])) {
+                switch ($_GET['error']) {
+                    case 'kt_input_trong':
+                        $error_message = "Vui lòng điền thông tin đăng ký!";
+                        break;
+                    case 'kt_kytu_user':
+                        $error_message = "Username 4 ký tự trở lên!";
+                        break;
+                    case 'kt_kytu_pass':
+                        $error_message = "Password 4 ký tự trở lên!";
+                        break;
+                    case 'kt_tenso':
+                        $error_message = "Họ tên ko được có số!";
+                        break;
+                    case 'kt_email_sai':
+                        $error_message = "email ko đúng định dạng!";
+                        break;
+                    case 'kt_nhaplaipass':
+                        $error_message = "Nhập lại mật khẩu không đúng!";
+                        break;
+                    case 'kt_tontai':
+                        $error_message = "Username đã tồn tại!";
+                        break;
+                    default:
+                        $error_message = "Có lỗi xảy ra, vui lòng thử lại!";
+                        break;
+                }
+                $url = "index.php?act=login";
+    echo "<script>
+            history.replaceState({}, '', '$url');
+          </script>";
+            }
+        ?>
         <div class="container-full bg-login">
             <div class="container-center login">
                 <div class="header-login">
@@ -10,8 +43,15 @@
                 <div class="main-login">
                     <p class="title-login" id="title-dangky">Đăng Ký</p>
                         <div class="main-login-DK">
-                            <form action="signup_inc_.php" method="POST">
+                            <form action="page/signup_inc_.php" method="POST">
                                 <table class="tb_DN">
+                                <?php if (isset($error_message)){ ?>
+                                    <div style="color: red; text-align: center; font-size:1.6rem;padding:1rem;">
+                                            <?=$error_message?>
+                                        </div>
+                                <?php
+                            }
+                            ?>
                                     <tr>
                                         <td><p class="title-tb">USERNAME:</p></td>
                                     </tr>
@@ -71,6 +111,3 @@
         </div>
     </main>
     
-<?php
-    include_once('../include/footer_user.php');
-?>
