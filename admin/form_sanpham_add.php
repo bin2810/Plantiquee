@@ -70,40 +70,9 @@
                     </div>
                     <div class="input-style-1">
                       <label>Hình Sản Phẩm</label>
-                        <input type="file" name="hinh_sp[]" multiple/>
+                        <input type="file" name="hinh_sp"/>
                       </div>
                   </div>
-                  <!-- end card -->
-                  <!-- ======= input style end ======= -->
-                  <div class="card-style mb-30">
-                    <h6 class="mb-25">Màu Sắc </h6>
-                    <div class="form-check checkbox-style mb-20">
-                      <input class="form-check-input" name="check_mau[]" type="checkbox" value="Xám Nhạt|#E6E8EA" id="checkbox-1" />
-                      <label class="form-check-label" for="checkbox-1">
-                      màu xám nhạt</label>
-                    </div>
-                    <div class="form-check checkbox-style mb-20">
-                      <input class="form-check-input" name="check_mau[]" type="checkbox" value="Nâu Cam|#C78356" id="checkbox-2" />
-                      <label class="form-check-label" for="checkbox-2">màu nâu cam</label>
-                    </div>
-                    <div class="form-check checkbox-style mb-20">
-                      <input class="form-check-input" name="check_mau[]" type="checkbox" value="Xám Đậm|#3B4037" id="checkbox-3" />
-                      <label class="form-check-label" for="checkbox-3">màu xám đậm</label>
-                    </div>
-                    <div class="form-check checkbox-style mb-20">
-                      <input class="form-check-input" name="check_mau[]" type="checkbox" value="Xám Xanh Nhạt|#B7C7CD" id="checkbox-4" />
-                      <label class="form-check-label" for="checkbox-4">màu xám xanh nhạt</label>
-                    </div>
-                    <div class="form-check checkbox-style mb-20">
-                      <input class="form-check-input" name="check_mau[]" type="checkbox" value="Xanh Đậm|#3B5D7D" id="checkbox-5" />
-                      <label class="form-check-label" for="checkbox-5">màu xanh đậm</label>
-                    </div>
-                  </div>
-                  <!-- ======= select style start ======= -->
-                  
-
-                  
-
                 </div>
                 <!-- end col -->
                 <div class="col-lg-6">
@@ -137,7 +106,6 @@
                             }
                           ?>
                         </select>
-                        
                       </div>
                     </div>
                     <div class="col-12">
@@ -148,26 +116,12 @@
                         </div>
                       </div>
                   </div>
-                  <!-- ======= textarea style end ======= -->
-
-                  <!-- ======= checkbox style start ======= -->
-                  
-                  <!-- ======= checkbox style end ======= -->
-
-                  <!-- ======= radio style start ======= -->
-                 
-                  <!-- ======= radio style end ======= -->
                 </div>
-                <!-- end col -->
               </div>
-              <!-- end row -->
             </div>
           </form>
-          
         </div>
-        <!-- end container -->
       </section>
-      <!-- ========== tab components end ========== -->
 <?php
   include_once('footer.php');
 ?>

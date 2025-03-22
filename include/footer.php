@@ -40,7 +40,7 @@
             </div>
             <div class="social-media">
               <a href="https://www.facebook.com/profile.php?id=61573249155245&locale=vi_VN"><img src="asset/img/fb_1.png" alt=""></a>
-              <a href=""><img src="asset/img/inta_1.png" alt=""></a>
+              <a href="https://www.instagram.com/plantiquee/"><img src="asset/img/inta_1.png" alt=""></a>
               <a href="https://www.tiktok.com/@plantiquee?is_from_webapp=1&sender_device=pc"><img src="asset/img/tiktok_1.png" alt=""></a>
             </div>
           </div>
@@ -78,6 +78,7 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="asset/js/main.js"></script>
+    <script src="asset/js/animation.js"></script>
     <script src="asset/js/navbar.js"></script>
     <script src="asset/js/bars.js"></script>
   </body>

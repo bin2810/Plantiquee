@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiện ra khi kéo xuống</title>
+    <style>
+        body {
+            height: 200vh;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .hien-ra {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .hien-ra.hien-thi {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hop {
+            width: 200px;
+            height: 100px;
+            background: lightblue;
+            margin: 50px auto;
+            padding: 20px;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kéo xuống để thấy hiệu ứng</h1>
+    <div class="hien-ra hop">Tôi xuất hiện khi kéo xuống!</div>
+    <script>
+        document.addEventListener("scroll", function() {
+            let element = document.querySelector(".hien-ra");
+            let position = element.getBoundingClientRect().top;
+            let screenPosition = window.innerHeight / 1.2;
+            
+            if (position < screenPosition) {
+                element.classList.add("hien-thi");
+            }
+        });
+    </script>
+</body>
+</html>

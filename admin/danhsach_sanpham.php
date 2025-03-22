@@ -24,21 +24,18 @@
               <div class="col-md-6">
                 <div class="breadcrumb-wrapper">
                   <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                      <li class="breadcrumb-item">
-                        <a href="#0">Dashboard</a>
-                      </li>
-                      <li class="breadcrumb-item"><a href="#0">Forms</a></li>
-                      <li class="breadcrumb-item active" aria-current="page">
-                        Form Elements
-                      </li>
-                    </ol>
+                  
+                    <div class="col-12">
+                        <div class="button-group d-flex justify-content-center flex-wrap">
+                          <button class="main-btn primary-btn btn-hover w-100 text-center"  type="submit" onclick="window.location.href='form_sanpham_add.php'">
+                            Thêm Sản Phẩm
+                          </button>
+                        </div>
+                      </div>
                   </nav>
                 </div>
               </div>
-              <!-- end col -->
             </div>
-            <!-- end row -->
           </div>
             <div class="form-elements-wrapper">
               <div class="row">
@@ -58,19 +55,22 @@
                             <h6>Tên Sản Phẩm</h6>
                           </th>
                           <th class="lead-info">
-                            <h6>Màu Sắc</h6>
-                          </th>
-                          <th class="lead-info">
                             <h6>Đơn Giá</h6>
                           </th>
                           <th class="lead-info">
                             <h6>Số Lượng</h6>
                           </th>
+                          <th class="lead-info">
+                            <h6>Người Thêm</h6>
+                          </th>
+                          <th class="lead-info">
+                            <h6>Thời Gian</h6>
+                          </th>
                           <th class="lead-company">
                             <h6>Sửa</h6>
                           </th>
                           <th class="lead-company">
-                            <h6>XOÁ</h6>
+                            <h6>Xoá</h6>
                           </th>
                         </tr>
                         <!-- end table row-->
@@ -79,18 +79,16 @@
                        
                         <tr>
                           <?php
+                            $i =1;
                             foreach ($danhsach as $sanpham) {
                           ?>
                           <td class="min-width">  
-                              <p><?=$sanpham['SanPham_id']?></p>
+                              <p><?=$i++?></p>
                           </td>
                           <td class="min-width">
-                            <?php
-                              $hinh_sp = explode('|', $sanpham['HinhAnh']);
-                            ?>
                             <div class="lead">
                               <div class="lead-image">
-                               <img src="../asset/img/sanpham/<?=$sanpham['MA_DM_con']?>/<?=$sanpham['TenSP']?>/<?=$hinh_sp[0]?>" alt="">
+                               <img src="../asset/img/sanpham/<?=$sanpham['MA_DM_con']?>/<?=$sanpham['TenSP']?>/<?=$sanpham['HinhAnh']?>" alt="">
                               </div>
                             </div>
                           </td>
@@ -98,105 +96,38 @@
                             <p><?=$sanpham['TenSP']?></p>
                           </td>
                           <td class="min-width">
-                            <?php
-                              $ten_mau = explode(',', $sanpham['Ten_Mau_Sac']);
-                              foreach ($ten_mau as $mau) {
-                            ?>
-                              <p><?=$mau?></p>
-                            <?php
-                              }
-                            ?>
-                          </td>
-                          <td class="min-width">
                             <p><?=$sanpham['DonGia']?></p>
                           </td>
                           <td class="min-width">
                             <p><?=$sanpham['SoLuong']?></p>
                           </td>
+                          <td class="min-width">
+                            <p><?=$sanpham['Nguoi_add']?></p>
+                          </td>
+                          <td class="min-width">
+                            <p><?= date('d/m/Y H:i:s', strtotime($sanpham['NgayTao']))?></p>
+                          </td>
                           <td>
                             <div class="action">
-                              <button class="text-success" onclick="window.location.href='danhsach_user_delete.php?id=<?=$user['User_id']?>'">
+                              <button class="text-success" onclick="window.location.href='danhsach_sanpham_update.php?id=<?=$sanpham['SanPham_id']?>'">
                               <i class="fa-solid fa-pen"></i>
                               </button>
                             </div>
                           </td>
                           <td>
                             <div class="action">
-                              <button class="text-danger" onclick="window.location.href='danhsach_user_delete.php?id=<?=$user['User_id']?>'">
+                              <button class="text-danger" onclick="window.location.href='danhsach_sanpham_delete.php?id=<?=$sanpham['SanPham_id']?>'">
                                 <i class="lni lni-trash-can"></i>
                               </button>
                             </div>
                           </td>
                         </tr>
-                      
                        <?php
-                            }
+                          }
                         ?>
                       </tbody>
                     </table>
                   </div>
-                  </div>
-                  <div class="card-style mb-30">
-                    
-                  </div>
-                  
-
-                  
-
-                </div>
-                <div class="col-lg-12">
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="card-style mb-30">
-                        <div class="table-wrapper table-responsive">
-                          <table class="table">
-                            <thead>
-                              <tr>
-                                <th class="lead-info">
-                                  <h6>Người Thêm Sản Phẩm</h6>
-                                </th>
-                                <th class="lead-info">
-                                  <h6>Tên Sản Phẩm</h6>
-                                </th>
-                                <th class="lead-info">
-                                  <h6>Ngày Và Giờ</h6>
-                                </th> 
-                              </tr>
-                              <!-- end table row-->
-                            </thead>
-                            <tbody>
-                            
-                              <tr>
-                                <?php
-                                  foreach ($danhsach as $sanpham) {
-                                ?>
-                                <td class="min-width">  
-                                    <p><?=$sanpham['Nguoi_add']?></p>
-                                </td>
-                                <td class="min-width">  
-                                  <p><?=$sanpham['TenSP']?></p>
-                                </td>
-                                <td class="min-width">
-                                  <p><?= date('d/m/Y H:i:s', strtotime($sanpham['NgayTao']))?></p>
-                                </td>
-                              </tr>
-                            
-                            <?php
-                                  }
-                              ?>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="card-style mb-30">
-                        <div class="table-wrapper table-responsive">
-                          
-                        </div>
-                      </div>
-                    </div>
-                  </div>  
                 </div>
               </div>
               <!-- end row -->

@@ -1,12 +1,11 @@
 <?php 
-include 'include/header.php';
 
+
+include_once('include/header.php');
 ?>
 <main>
 
-<?php
-  //  index.php
-  
+<?php  
       $page = isset($_GET['act']) ? $_GET['act'] : 'home'; 
   
       switch ($page) {
@@ -17,7 +16,7 @@ include 'include/header.php';
                 include 'page/login.php';
                 break;
                 case 'login_inc': 
-                    include 'page/login_inc_.php'; // Xử lý đăng nhập tại đây
+                    include 'page/login_inc_.php';
                     break;
             case 'signup':
                 include 'page/signup.php';

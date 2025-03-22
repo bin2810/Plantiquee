@@ -7,8 +7,6 @@
   $stmt->execute();
   $danhmuc = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-  
-
 ?>
 
 <DOCTYPE html>
@@ -16,7 +14,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="website icon" type="image/png" href="asset/img/logo-tab.png" />
+    <!-- <link rel="icon" type="image/png" href="/plantiquee/asset/img/logo-tab.png" /> -->
+    <!-- <link rel="shortcut icon" href="http://localhost/plantiquee/asset/img/favicon.ico" type="image/x-icon" /> -->
+    <!-- <link rel="icon" href="http://localhost/plantiquee/asset/img/favicon.ico" type="image/x-icon"> -->
+    <link rel="shortcut icon" href="/asset/img/favicon.ico"/>
+    <link rel="stylesheet" href="http://www.example.com/favicon.ico"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link rel="stylesheet" href="asset/css/resset.css"/>
     <link rel="stylesheet" href="asset/css/bass.css"/>
@@ -86,12 +88,30 @@
               </div>
             </div>
             <div class="nav-login">
-              <img class="nav-login-search hide-mobi hide-tablet" src="asset/img/search.png" alt=""/>
-              
+              <?php
+                if (isset($_SESSION['user']['VaiTro'])) {
+                    $vai_tro = $_SESSION['user']['VaiTro'];
+                } else {
+                    $vai_tro = null;
+                }
+                if ($vai_tro !== 'admin') { 
+              ?>
+                <img class="nav-login-search hide-mobi hide-tablet" src="asset/img/search.png" alt=""/>
+              <?php
+                }
+              ?>
                 <a href="<?= $dashboard_link; ?>">
-                    <img class="nav-login-user hide-mobi hide-tablet" src="<?= $avatar; ?>" alt="User Avatar" />
+                  <img class="nav-login-user hide-mobi hide-tablet" src="<?= $avatar; ?>" alt="User Avatar" />
                 </a>
-
+              
+              <?php 
+                if (isset($_SESSION['user']['VaiTro'])) {
+                    $vai_tro = $_SESSION['user']['VaiTro'];
+                } else {
+                    $vai_tro = null;
+                }
+                if ($vai_tro !== 'admin') { 
+              ?>
               <div class="nav-cart">
                 <button class="cart-button" onclick="toggleCart()">
                   <img src="asset/img/cart.png" alt="" />
@@ -100,6 +120,9 @@
                 <button class="cart-button" onclick="toggleCart()"><span>1</span></button>
                 </div>
               </div>
+              <?php
+                }
+              ?>
             </div>
           </div>
         </div>

@@ -16,8 +16,8 @@ if(isset($_GET['act'])){
     $dmcon_list = $stmt2->fetchAll(PDO::FETCH_COLUMN);
 
     if (!empty($dmcon_list)) {
-        $placeholders = implode(',', array_fill(0, count($dmcon_list), '?'));
-        $query_sanpham = "SELECT * FROM tb_sanpham WHERE MA_DM_con IN ($placeholders)";
+        $mang = implode(',', array_fill(0, count($dmcon_list), '?'));
+        $query_sanpham = "SELECT * FROM tb_sanpham WHERE MA_DM_con IN ($mang)";
         $stmt3 = $conn->prepare($query_sanpham);
         $stmt3->execute($dmcon_list);
         $product = $stmt3->fetchAll(PDO::FETCH_ASSOC);
@@ -27,7 +27,7 @@ if(isset($_GET['act'])){
 }
 
 ?>
-<div class="container-full">
+    <div class="container-full">
         <div class="container-center">
             
             <div class="title_shop-product">
@@ -70,10 +70,9 @@ if(isset($_GET['act'])){
                     <div class="shop-product-list">
                         <?php
                             foreach ($product as $sp) {
-                            
                         ?>
                         <div class="shop-product-item">
-                            <div class="shop-product-item-col-img discount">
+                            <div class="shop-product-item-col-img <?=$sp['TinhTrang']?>">
                                 <?php
                                     $hinh_sp = explode('|', $sp['HinhAnh']);
                                 ?>
@@ -83,24 +82,9 @@ if(isset($_GET['act'])){
                             <div class="product-item-col-information">
                                 <div class="product-item-col-information-col-left">
                                     <p><?=$sp['TenSP']?></p>
-                                    <div class="radio-container product-color">
-                                        <label class="radio">
-                                            <input type="radio" name="color" value="gray" checked />
-                                            <div class="circle"></div>
-                                        </label>
-                                        <label class="radio">
-                                            <input type="radio" name="color" value="brown" />
-                                            <div class="circle"></div>
-                                        </label>
-                                        <label class="radio">
-                                            <input type="radio" name="color" value="blue" />
-                                            <div class="circle"></div>
-                                        </label>
-                                    </div>
                                 </div>
                                 <div class="product-item-col-information-col-right">
                                     <p>1200 VND</p>
-                                    <p>Lớn</p>
                                 </div>
                             </div>
                         </div>
@@ -110,9 +94,5 @@ if(isset($_GET['act'])){
                     </div>
                 </div>
             </div>
-            
         </div>
     </div>
-
-
-

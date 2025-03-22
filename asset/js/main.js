@@ -16,7 +16,7 @@ function toggleCart() {
 
 
 // chat
-$('#chat-btn').on('click', function () {
+$('#chat-btn,#chat-btn-1').on('click', function () {
     $('#chat-widget').css('display', 'block'); 
     setTimeout(function () {
         $('#chat-widget').css('transform', 'scale(1)'); 
@@ -29,3 +29,7 @@ $('#close-chat').on('click', function () {
         $('#chat-widget').css('display', 'none'); 
     }, 400); 
 });
+
+
+
+

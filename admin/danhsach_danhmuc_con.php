@@ -89,13 +89,13 @@ include_once 'header.php';
                             <p><?=$ds['MA_DM_cha']?></p>
                           </td>
                           <td class="action">  
-                              <button class="text-success">
+                              <button class="text-success" onclick="window.location.href='danhsach_danhmuc_con_update.php?id=<?=$ds['MADM_con']?>'">
                               <i class="fa-solid fa-pen"></i>
                               </button>
                           </td>
                           <td>
                             <div class="action">
-                              <button class="text-danger" onclick="window.location.href='danhsach_danhmuc_con_delete.php?id=<?=$ds['MADM_con']?>'">
+                              <button class="text-danger" onclick="window.location.href='danhsach_danhmuc_con_delete.php?id1=<?=$ds['MADM_con']?>'">
                                 <i class="lni lni-trash-can"></i>
                               </button>
                             </div>

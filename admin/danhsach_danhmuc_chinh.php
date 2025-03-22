@@ -83,13 +83,13 @@ include_once 'header.php';
                             <p><?=$ds['TENDM_cha']?></p>
                           </td>
                           <td class="action">  
-                              <button class="text-success">
+                              <button class="text-success" onclick="window.location.href='danhsach_danhmuc_chinh_update.php?id=<?=$ds['MADM_cha']?>'">
                                 <i class="fa-solid fa-pen"></i>
                               </button>
                           </td>
                           <td>
                             <div class="action">
-                              <button class="text-danger">
+                              <button class="text-danger" onclick="window.location.href='danhsach_danhmuc_chinh_delete.php?id=<?=$ds['MADM_cha']?>'">
                                 <i class="lni lni-trash-can"></i>
                               </button>
                             </div>
@@ -98,7 +98,6 @@ include_once 'header.php';
                         <?php
                           }
                         ?>
-                       
                       </tbody>
                     </table>
                     <!-- end table -->

@@ -4,7 +4,7 @@
     if(isset($_POST['btnadddanhmuc'])){
       $madm = $_POST['madm'];
       $namedm = $_POST['namedm'];
-      var_dump($madm,$namedm);
+      // var_dump($madm,$namedm);
       if(empty($madm) || empty($namedm) ){
         header("location: form_danhmuc_add.php?error=kt_input_trong");
         exit();

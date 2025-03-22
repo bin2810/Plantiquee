@@ -1,16 +1,12 @@
-$(document).ready(function () {
-    function checkScroll() {
-        $(".box").each(function () {
-            let boxTop = $(this).offset().top;
-            let scrollPos = $(window).scrollTop();
-            let windowHeight = $(window).height();
+document.addEventListener("scroll", function() {
+    let elements = document.querySelectorAll(".hien-ra-dl, .hien-ra-t");
+    let screenPosition = window.innerHeight / 1.2;
 
-            if (boxTop < scrollPos + windowHeight - 100) { 
-                $(this).addClass("show");
-            }
-        });
-    }
+    elements.forEach((element) => {
+        let position = element.getBoundingClientRect().top; // Thêm .top vào đây
 
-    $(window).on("scroll", checkScroll);
-    checkScroll(); // Kiểm tra khi tải trang
+        if (position < screenPosition) {
+            element.classList.add("hien-thi");
+        }
+    });
 });
