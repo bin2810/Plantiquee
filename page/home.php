@@ -92,7 +92,7 @@
               </div>
             </div>
           </div>
-          <div class="container-center feature-product hide-pc show-tab-mobi">
+          <div class="container-center feature-product hide-pc hiden-tab-mobi">
             <div class="feature-video">
               <video autoplay loop muted playsinline>
                 <source
@@ -101,7 +101,7 @@
                 />
               </video>
             </div>
-            <div class="feature-product-content">
+            <div class="feature-product-content ">
               <div class="feature-title">
                 <p>Giao hàng an toàn đến tận nhà bạn</p>
                 <p></p>
@@ -220,7 +220,7 @@
 
        
 
-        <div class="container-full bg-gift hide-tablet">
+        <div class="container-full bg-gift">
           <div class="container-center">
             <div class="gift">
               <div class="gift-img">
@@ -235,19 +235,20 @@
           </div>
         </div>
         <div class="container-full bg-gift hide-pc show-mobi hide-tablet">
-        <div class="container-center">
-            <div class="gift">
-              <div class="gift-img">
-                <div class="gift-video">
-                  <video autoplay loop muted playsinline>
-                    <source src="asset/media/pots-collection-3.mp4" type="video/mp4" />
-                  </video>
+          <div class="container-center">
+              <div class="gift">
+                <div class="gift-img">
+                  <div class="gift-video">
+                    <video autoplay loop muted playsinline>
+                      <source src="asset/media/pots-collection-3.mp4" type="video/mp4" />
+                    </video>
+                  </div>
                 </div>
-              </div>
-              <div class="gift-content">
-                <p>Thiết Kế Vượt Thời Gian</p>
-                <p>Bộ sưu tập chậu cây mang tính biểu tượng của chúng tôi được chế tác tinh xảo, nổi bật trong mọi không gian.</p>
-                <p class="hide-mobi"><a href="">Cây Trồng</a></p>
+                <div class="gift-content">
+                  <p>Thiết Kế Vượt Thời Gian</p>
+                  <p>Bộ sưu tập chậu cây mang tính biểu tượng của chúng tôi được chế tác tinh xảo, nổi bật trong mọi không gian.</p>
+                  <p class="hide-mobi"><a href="">Cây Trồng</a></p>
+                </div>
               </div>
             </div>
           </div>
@@ -255,13 +256,13 @@
 
         <div class="container-center product hien-ra-dl">
           <div class="product-title">
-            <p>Hàng Mới Về</p>
+            <p>Quà Tặng</p>
             <p><a href="">Xem Tất cả</a></p>
           </div>
           <div class="product-list">
           <?php
             include_once('include/database.php');
-            $query_hangmoive = "SELECT * FROM tb_sanpham WHERE MA_DM_con = 'HMV'";
+            $query_hangmoive = "SELECT * FROM tb_sanpham WHERE MA_DM_con = 'QTGD'";
             $stmt_hangmoive = $conn ->prepare($query_hangmoive);
             $stmt_hangmoive->execute();
 
@@ -281,10 +282,13 @@
                 </div>
                 <div class="product-item-col-information">
                   <div class="product-item-col-information-col-left">
-                    <p>Trúc Mây</p>
+                    <p><?=$HMV['TenSP']?></p>
                   </div>
                   <div class="product-item-col-information-col-right">
-                    <p>1200 VND</p>
+                  <?php
+                      $giasp = number_format($HMV['DonGia'],0,',','.');
+                    ?>
+                    <p><?=$giasp?> VND</p>
                   </div>
                 </div>
               </li>
@@ -295,7 +299,7 @@
           </div>
         </div>
 
-        <div class="container-full bg_trademark hide-tablet hide-mobi">
+        <div class="container-full bg_trademark hiden-tab-mobi">
           <div class="container-center trademark">
             <div class="trademark-row">
               <img src="asset/img/trademark-1.png" alt="">

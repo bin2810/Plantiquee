@@ -402,7 +402,7 @@
                         if( isset($_SESSION['user']['id']) && isset($_SESSION['user']['name']) && isset($_SESSION['user']['Hinhanh'])  ){
                           // var_dump($_SESSION['id']['User_id']);
                           $user_id = $_SESSION['user']['id'];
-                          $avatar = "assets/images/".$_SESSION['user']['Hinhanh'];
+                          $avatar = "../asset/img/user/".$_SESSION['user']['Hinhanh'];
                           $fullname = $_SESSION['user']['name'];
                         } else{
                           // var_dump($_SESSION['user']);
@@ -445,7 +445,7 @@
                     </li>
                     <li class="divider"></li>
                     <li>
-                      <a href="settings_user_admin.php?=<?=$user_id?>">
+                      <a href="settings_user_admin.php?id=<?=$user_id?>">
                         <i class="lni lni-user"></i>Xem Hồ Sơ
                       </a>
                     </li>

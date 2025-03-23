@@ -572,6 +572,42 @@ main{
 
 
 
+.phantrang {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.phantrang a, .phantrang span {
+  display: inline-block;
+  padding: 10px 12px;
+  margin: 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.phantrang a {
+  color: var(--PalePink-color);
+  font-weight: bold;
+  border: 0.2rem solid var(--green-color);
+}
+
+.phantrang a:hover {
+  background-color:var(--green-color);
+}
+
+.phantrang span {
+  background-color: var(--green-color);
+  color: var(--PalePink-color);
+  font-weight: bold;
+  border: 1px solid var(--bgnav-color);
+}
+
+
+
+
 .interest-list{
   display: flex;
   gap: 15px;
@@ -596,9 +632,10 @@ main{
 
 
 .plant-highlight{
-  margin: 8rem 0;
+  margin: 6rem 0;
   background-color: var(--bg-color);
-  height: 500px;
+  height: auto;
+  padding: 1rem;
   width: 100%;
   position: relative;
 }
@@ -607,7 +644,7 @@ main{
 .feature-product{
   display: flex;
   justify-content: space-around;
-  padding: 7rem 0;
+  padding: 2rem 0;
 }
 .feature-product video{
   border-radius: 1rem;
@@ -702,6 +739,9 @@ main{
   /* border: 1rem  solid var(--green-color); */
   background-color: var(--green-color);
 }
+.chat-user-img{
+  margin: 0 auto;
+}
 .chat-user-img img{
   width: 100%;
   height: auto;
@@ -712,7 +752,7 @@ main{
 
 
 .bg-gift{
-  /* margin: 2rem 0; */
+  margin: 8rem 0;
   padding: 2rem;
   /* background-color: var(--bg-color); */
 }
@@ -774,19 +814,22 @@ main{
 
 
 .bg_trademark{
-  margin: 6rem 0 2rem 0 ;
+  margin: 6rem 0 5rem 0 ;
   padding: 5rem;
   background-color: #F8F3E7;
+  overflow: hidden;
 }
 
 .trademark-row{
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
   gap: 10rem;
   justify-content: center;
   align-items: center;
 }
 .trademark-row img{
-  width: 20rem;
+  width: 15%;
 }
 
 

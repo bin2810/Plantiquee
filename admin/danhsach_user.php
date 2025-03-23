@@ -59,7 +59,7 @@
                   <?php
                     }else{
                   ?>
-                    <img src="assets/images/<?=$user['Hinhanh']?>" alt="" />
+                    <img src="../asset/img/user/<?=$user['Hinhanh']?>" alt="" />
                   <?php
                     }
                   ?>

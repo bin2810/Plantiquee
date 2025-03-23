@@ -17,8 +17,8 @@
     <!-- <link rel="icon" type="image/png" href="/plantiquee/asset/img/logo-tab.png" /> -->
     <!-- <link rel="shortcut icon" href="http://localhost/plantiquee/asset/img/favicon.ico" type="image/x-icon" /> -->
     <!-- <link rel="icon" href="http://localhost/plantiquee/asset/img/favicon.ico" type="image/x-icon"> -->
-    <link rel="shortcut icon" href="/asset/img/favicon.ico"/>
-    <link rel="stylesheet" href="http://www.example.com/favicon.ico"/>
+    <!-- <link rel="shortcut icon" href="/asset/img/favicon.ico"/> -->
+    <!-- <link rel="stylesheet" href="http://www.example.com/favicon.ico"/> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link rel="stylesheet" href="asset/css/resset.css"/>
     <link rel="stylesheet" href="asset/css/bass.css"/>
@@ -72,9 +72,9 @@
               ?>
               <?php
                   if (isset($_SESSION['user']) && isset($_SESSION['user']['Hinhanh'])) {
-                      $avatar = "asset/img/" . $_SESSION['user']['Hinhanh'];
+                      $avatar = "asset/img/user/" . $_SESSION['user']['Hinhanh'];
                   } else {
-                      $avatar = "asset/img/user.png"; 
+                      $avatar = "asset/img/user/user.png"; 
                   }
 
                   $dashboard_link = "index.php?act=login"; 

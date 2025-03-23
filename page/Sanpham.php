@@ -21,9 +21,30 @@ if(isset($_GET['act'])){
         $stmt3 = $conn->prepare($query_sanpham);
         $stmt3->execute($dmcon_list);
         $product = $stmt3->fetchAll(PDO::FETCH_ASSOC);
+        
+
+        // phân trang
+        $sl_page = 6;
+        $tong_product = count($product);
+
+        $tong_page = ceil($tong_product/$sl_page);
+
+        $page_show = min($tong_page , max(1 , isset($_GET['page']) ? $_GET['page'] : 1));
+    
+        $vtbd = ($page_show - 1) * $sl_page;
+    
+        $query_sanpham .= " limit ".$vtbd.",".$sl_page;
+    
+        $stmt3 = $conn->prepare($query_sanpham);
+        $stmt3->execute($dmcon_list);
+        $product = $stmt3->fetchAll(PDO::FETCH_ASSOC);
     } else {
         $product = [];
     }
+   
+
+    // var_dump($tong_product);
+
 }
 
 ?>
@@ -38,7 +59,7 @@ if(isset($_GET['act'])){
                 <?php
                 }
                 ?>
-                <form action="" method="post">
+                <form action="" method="post" class="hide-mobi">
                     <select name="" id="">
                         <option value="">44s</option>
                     </select>
@@ -73,10 +94,7 @@ if(isset($_GET['act'])){
                         ?>
                         <div class="shop-product-item">
                             <div class="shop-product-item-col-img <?=$sp['TinhTrang']?>">
-                                <?php
-                                    $hinh_sp = explode('|', $sp['HinhAnh']);
-                                ?>
-                                <img src="asset/img/sanpham/<?=$sp['MA_DM_con']?>/<?=$sp['TenSP']?>/<?=$hinh_sp[0]?>" alt="" />
+                                <img src="asset/img/sanpham/<?=$sp['MA_DM_con']?>/<?=$sp['TenSP']?>/<?=$sp['HinhAnh']?>" alt="" />
                                 <button class="shop-btnaddcart">Thêm Vào Giõ Hàng</button>
                             </div>
                             <div class="product-item-col-information">
@@ -84,7 +102,10 @@ if(isset($_GET['act'])){
                                     <p><?=$sp['TenSP']?></p>
                                 </div>
                                 <div class="product-item-col-information-col-right">
-                                    <p>1200 VND</p>
+                                <?php
+                                    $giasp = number_format($sp['DonGia'],0,',','.');
+                                ?>
+                                    <p><?=$giasp?> VND</p>
                                 </div>
                             </div>
                         </div>
@@ -92,6 +113,22 @@ if(isset($_GET['act'])){
                             }
                         ?>
                     </div>
+                    <div class="phantrang">
+                        <?php
+                        if(isset($tong_page)){
+                            for($so = 1; $so <= $tong_page; $so++){
+                                if($so != $page_show){
+                        ?>
+                                    <a href="index.php?act=<?=$madanhmuc?>&page=<?=$so?>"><?=$so?></a>
+                        <?php
+                                }else{
+                        ?>
+                                <span><?=$so?></span>
+                        <?php
+                                }
+                            }
+                        }
+                        ?>
                 </div>
             </div>
         </div>
