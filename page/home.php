@@ -30,15 +30,18 @@
               ?>
               <li class="product-item-col">
                 <div class="product-item-col-img <?=$HMV['TinhTrang']?>">
-                  <img src="asset/img/sanpham/<?=$HMV['MA_DM_con']?>/<?=$HMV['TenSP']?>/<?=$HMV['HinhAnh']?>" alt="" />
+                  <a href="page/Sanpham_CT.php?id=<?=$HMV['SanPham_id']?>"><img src="asset/img/sanpham/<?=$HMV['MA_DM_con']?>/<?=$HMV['Ten_Khoa_Hoc']?>/<?=$HMV['HinhAnh']?>" alt="" /></a>
                   <button class="btnaddcart">Thêm Vào Giõ Hàng</button>
                 </div>
                 <div class="product-item-col-information">
                   <div class="product-item-col-information-col-left">
-                    <p>Trúc Mây</p>
+                    <p><?=$HMV['TenSP']?></p>
                   </div>
                   <div class="product-item-col-information-col-right">
-                    <p>1200 VND</p>
+                  <?php
+                    $giasp = number_format($HMV['DonGia'],0,',','.');
+                  ?>
+                    <p><?=$giasp?> VND</p>
                   </div>
                 </div>
               </li>
@@ -157,7 +160,7 @@
                   <?php
                     $img_sp = explode('|', $BCN['HinhAnh']);
                   ?>
-                  <img src="asset/img/sanpham/<?=$BCN['MA_DM_con']?>/<?=$BCN['TenSP']?>/<?=$img_sp[0]?>" alt="" />
+                  <a href="page/Sanpham_CT.php?id=<?=$BCN['SanPham_id']?>"><img src="asset/img/sanpham/<?=$BCN['MA_DM_con']?>/<?=$BCN['Ten_Khoa_Hoc']?>/<?=$img_sp[0]?>" alt="" /></a>
                   <button class="btnaddcart">Thêm Vào Giõ Hàng</button>
                 </div>
                 <div class="product-item-col-information">
@@ -277,7 +280,7 @@
                   <?php
                     $img_sp = explode('|', $HMV['HinhAnh']);
                   ?>
-                  <img src="asset/img/sanpham/<?=$HMV['MA_DM_con']?>/<?=$HMV['TenSP']?>/<?=$img_sp[0]?>" alt="" />
+                  <a href="page/Sanpham_CT.php?id=<?=$HMV['SanPham_id']?>"><img src="asset/img/sanpham/<?=$HMV['MA_DM_con']?>/<?=$HMV['Ten_Khoa_Hoc']?>/<?=$img_sp[0]?>" alt="" /></a>
                   <button class="btnaddcart">Thêm Vào Giõ Hàng</button>
                 </div>
                 <div class="product-item-col-information">
@@ -285,7 +288,7 @@
                     <p><?=$HMV['TenSP']?></p>
                   </div>
                   <div class="product-item-col-information-col-right">
-                  <?php
+                    <?php
                       $giasp = number_format($HMV['DonGia'],0,',','.');
                     ?>
                     <p><?=$giasp?> VND</p>

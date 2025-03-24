@@ -15,6 +15,7 @@ if(isset($_GET['act'])){
     $stmt2->execute([$madanhmuc]);
     $dmcon_list = $stmt2->fetchAll(PDO::FETCH_COLUMN);
 
+    // kiểm tra biến dmcon_list có rỗng ko nếu có thì chạy
     if (!empty($dmcon_list)) {
         $mang = implode(',', array_fill(0, count($dmcon_list), '?'));
         $query_sanpham = "SELECT * FROM tb_sanpham WHERE MA_DM_con IN ($mang)";
@@ -94,7 +95,7 @@ if(isset($_GET['act'])){
                         ?>
                         <div class="shop-product-item">
                             <div class="shop-product-item-col-img <?=$sp['TinhTrang']?>">
-                                <img src="asset/img/sanpham/<?=$sp['MA_DM_con']?>/<?=$sp['TenSP']?>/<?=$sp['HinhAnh']?>" alt="" />
+                                <a href="page/Sanpham_CT.php?id=<?=$sp['SanPham_id']?>"><img src="asset/img/sanpham/<?=$sp['MA_DM_con']?>/<?=$sp['Ten_Khoa_Hoc']?>/<?=$sp['HinhAnh']?>" alt="" /></a>
                                 <button class="shop-btnaddcart">Thêm Vào Giõ Hàng</button>
                             </div>
                             <div class="product-item-col-information">
@@ -129,6 +130,7 @@ if(isset($_GET['act'])){
                             }
                         }
                         ?>
+                    </div>
                 </div>
             </div>
         </div>

@@ -5,6 +5,22 @@
   $stmt = $conn->prepare($sql);
   $stmt->execute();
   $danhsach = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+  // phân trang
+  $sl_page = 6;
+  $tong_product = count($danhsach);
+
+  $tong_page = ceil($tong_product/$sl_page);
+
+  $page_show = min($tong_page , max(1 , isset($_GET['page']) ? $_GET['page'] : 1));
+
+  $vtbd = ($page_show - 1) * $sl_page;
+
+  $sql .= " limit ".$vtbd.",".$sl_page;
+
+  $stmt = $conn->prepare($sql);
+  $stmt->execute();
+  $danhsach = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
       <!-- ========== header start ========== -->
       <!-- ========== header end ========== -->
@@ -88,7 +104,7 @@
                           <td class="min-width">
                             <div class="lead">
                               <div class="lead-image">
-                               <img src="../asset/img/sanpham/<?=$sanpham['MA_DM_con']?>/<?=$sanpham['TenSP']?>/<?=$sanpham['HinhAnh']?>" alt="">
+                               <img src="../asset/img/sanpham/<?=$sanpham['MA_DM_con']?>/<?=$sanpham['Ten_Khoa_Hoc']?>/<?=$sanpham['HinhAnh']?>" alt="">
                               </div>
                             </div>
                           </td>
@@ -126,7 +142,25 @@
                           }
                         ?>
                       </tbody>
+                      
                     </table>
+                    <div class="phantrang">
+                        <?php
+                        if(isset($tong_page)){
+                            for($so = 1; $so <= $tong_page; $so++){
+                                if($so != $page_show){
+                        ?>
+                                    <a href="?page=<?=$so?>"><?=$so?></a>
+                        <?php
+                                }else{
+                        ?>
+                                <span><?=$so?></span>
+                        <?php
+                                }
+                            }
+                        }
+                        ?>
+                </div>
                   </div>
                 </div>
               </div>

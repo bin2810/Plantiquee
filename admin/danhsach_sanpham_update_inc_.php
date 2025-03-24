@@ -19,11 +19,11 @@ if (isset($_POST['update_sp'])) {
     $stmt_cu = $conn->prepare("SELECT TenSP FROM tb_sanpham WHERE SanPham_id = ?");
     $stmt_cu->execute([$id_update_sp]);
     $row_cu = $stmt_cu->fetch(PDO::FETCH_ASSOC);
-    $ten_sp_cu = $row_cu['TenSP'];
+    $ten_sp_cu = $row_cu['Ten_Khoa_hoc'];
 
     // Thư mục cũ & mới
     $thu_muc_cu = "../asset/img/sanpham/$danhmuc_con/$ten_sp_cu/";
-    $thu_muc_moi = "../asset/img/sanpham/$danhmuc_con/$ten_sp_moi/";
+    $thu_muc_moi = "../asset/img/sanpham/$danhmuc_con/$ten_kh/";
 
     // Nếu tên sản phẩm thay đổi thì di chuyển thư mục ảnh
     if ($ten_sp_cu !== $ten_sp_moi && file_exists($thu_muc_cu)) {

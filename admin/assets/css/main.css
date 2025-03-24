@@ -23,6 +23,49 @@ body {
   box-sizing: border-box;
 }
 
+
+
+
+.phantrang {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.phantrang a, .phantrang span {
+  display: inline-block;
+  padding: 10px 14px;
+  margin: 5px;
+  font-size: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.phantrang a {
+  color: #F6CFB2;
+  font-weight: bold;
+  border: 2px solid #224229;
+}
+
+.phantrang a:hover {
+  background-color:#224229;
+}
+
+.phantrang span {
+  background-color: #224229;
+  color: #F6CFB2;
+  font-weight: bold;
+  border: 1px solid #FCF9F3;
+}
+
+
+
+
+
+
+
+
 a:focus,
 input:focus,
 textarea:focus,

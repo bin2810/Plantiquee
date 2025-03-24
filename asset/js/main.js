@@ -33,3 +33,18 @@ $('#close-chat').on('click', function () {
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const nutP = document.getElementById("nutP");
+    const footer = document.querySelector("footer");
+
+    window.addEventListener("scroll", function () {
+        const footerTop = footer.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (footerTop < windowHeight) {
+            nutP.classList.add("dich-vao"); // Khi chạm footer, dịch vào
+        } else {
+            nutP.classList.remove("dich-vao"); // Khi kéo lên, trở lại vị trí cũ
+        }
+    });
+});

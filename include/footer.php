@@ -1,3 +1,33 @@
+<div class="main_card">
+          <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+          <div class="cart-sidebar" id="cartSidebar">
+            <button class="close-cart" onclick="toggleCart()">✖</button>
+            <h2>Giỏ hàng của bạn</h2>
+          </div>
+        </div>
+
+
+        <div class="main_chat hiden-tab-mobi" id="nutP">
+          <button id="chat-btn"><div class="chat_bubble"><img src="asset/img/logo-tab.png" alt=""></div></button>
+        </div>
+        <div id="chat-widget" class="chat-widget">
+          <div class="chat-header">
+              <span class="brand">Plantiquee</span>
+              
+              <button id="close-chat" class="close-chat">✖</button>
+          </div>
+          <div class="chat-body">
+              <p>Xin Chào 👋🌱</p>
+              <div class="chat-options">
+                  <button>Send us a message</button>
+                  <button>Order status</button>
+                  <button>Plant Care, Guidance, & Troubleshooting</button>
+              </div>
+          </div>
+          <div class="chat-footer">
+              <p>adgfsg</p>
+          </div>
+        </div>
 <footer>
         <div class="container-full bg-footer">
           <div class="container-center footer">
@@ -46,37 +76,6 @@
           </div>
         </div>
       </footer>
-
-        <div class="main_card">
-          <div class="overlay" id="overlay" onclick="toggleCart()"></div>
-          <div class="cart-sidebar" id="cartSidebar">
-            <button class="close-cart" onclick="toggleCart()">✖</button>
-            <h2>Giỏ hàng của bạn</h2>
-          </div>
-        </div>
-
-
-        <div class="main_chat hiden-tab-mobi">
-          <button id="chat-btn"><div class="chat_bubble"><img src="asset/img/logo-tab.png" alt=""></div></button>
-        </div>
-        <div id="chat-widget" class="chat-widget">
-          <div class="chat-header">
-              <span class="brand">Plantiquee</span>
-              
-              <button id="close-chat" class="close-chat">✖</button>
-          </div>
-          <div class="chat-body">
-              <p>Xin Chào 👋🌱</p>
-              <div class="chat-options">
-                  <button>Send us a message</button>
-                  <button>Order status</button>
-                  <button>Plant Care, Guidance, & Troubleshooting</button>
-              </div>
-          </div>
-          <div class="chat-footer">
-              <p>adgfsg</p>
-          </div>
-        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="asset/js/main.js"></script>

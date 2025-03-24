@@ -11,7 +11,7 @@ if(isset($_POST['sub_themsp'])){
     $mota_sp = $_POST['mota_sp'];
     $nguoi_add = $_SESSION['user']['name'];
     $danhmuc_con = $_POST['danhmuc_con'];
-    $upload_img = "../asset/img/sanpham/$danhmuc_con/$ten_sp/";
+    $upload_img = "../asset/img/sanpham/$danhmuc_con/$ten_kh/";
 
     // Kiểm tra nếu thư mục chưa tồn tại thì tạo mới
     if (!file_exists($upload_img)) {

@@ -86,6 +86,10 @@ main{
   z-index: 49999;
   right: 2.5rem;
   bottom: 2rem;
+  transition: right 0.3s ease-in-out;
+}
+.main_chat.dich-vao {
+  right: -100px; /* Dịch vào khi chạm footer */
 }
 .main_chat button{
   background: none;
@@ -373,11 +377,14 @@ main{
 .product-item{
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 2.2rem;
 }
 .product-item-col{
   width: 28%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
   
 }
 .product-item-col:nth-child(n+5) {
@@ -571,39 +578,6 @@ main{
 
 
 
-
-.phantrang {
-  text-align: right;
-  margin-top: 20px;
-}
-
-.phantrang a, .phantrang span {
-  display: inline-block;
-  padding: 10px 12px;
-  margin: 5px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-.phantrang a {
-  color: var(--PalePink-color);
-  font-weight: bold;
-  border: 0.2rem solid var(--green-color);
-}
-
-.phantrang a:hover {
-  background-color:var(--green-color);
-}
-
-.phantrang span {
-  background-color: var(--green-color);
-  color: var(--PalePink-color);
-  font-weight: bold;
-  border: 1px solid var(--bgnav-color);
-}
 
 
 
