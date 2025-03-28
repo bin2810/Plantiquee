@@ -1,4 +1,4 @@
-
+<main>
         <div class="container-full banner">
           <div class="banner-img">
             <img src="asset/img/banner1.jpg" alt="" />
@@ -318,3 +318,4 @@
             </div>
           </div>
         </div>
+        </main>

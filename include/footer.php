@@ -1,4 +1,4 @@
-<div class="main_card">
+        <div class="main_card">
           <div class="overlay" id="overlay" onclick="toggleCart()"></div>
           <div class="cart-sidebar" id="cartSidebar">
             <button class="close-cart" onclick="toggleCart()">✖</button>
@@ -28,7 +28,7 @@
               <p>adgfsg</p>
           </div>
         </div>
-<footer>
+      <footer>
         <div class="container-full bg-footer">
           <div class="container-center footer">
             <div class="footer-img">
@@ -76,11 +76,12 @@
           </div>
         </div>
       </footer>
-    </div>
+   
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="asset/js/main.js"></script>
     <script src="asset/js/animation.js"></script>
     <script src="asset/js/navbar.js"></script>
     <script src="asset/js/bars.js"></script>
+   </div>
   </body>
 </html>

@@ -1,9 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="icon" type="image/png" href="/plantiquee/asset/img/logo-tab.png" /> -->
+    <!-- <link rel="shortcut icon" href="http://localhost/plantiquee/asset/img/favicon.ico" type="image/x-icon" /> -->
+    <!-- <link rel="icon" href="http://localhost/plantiquee/asset/img/favicon.ico" type="image/x-icon"> -->
+    <!-- <link rel="shortcut icon" href="/asset/img/favicon.ico"/> -->
+    <!-- <link rel="stylesheet" href="http://www.example.com/favicon.ico"/> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="asset/css/resset.css"/>
+    <link rel="stylesheet" href="asset/css/bass.css"/>
+    <link rel="stylesheet" href="asset/css/main.css"/>
+    <link rel="stylesheet" href="asset/css/login.css"/>
+    <link rel="stylesheet" href="asset/css/dashboard.css"/>
+    <link rel="stylesheet" href="asset/css/Product.css" />
+    <link rel="stylesheet" href="asset/css/dashboard.css"/>
+    <link rel="stylesheet" href="asset/css/responsive.css" />
+    
+    <title></title>
+  </head>
+  <body>
+
 <?php 
-
-
 include_once('include/header.php');
 ?>
-<main>
+
 
 <?php  
       $page = isset($_GET['act']) ? $_GET['act'] : 'home'; 
@@ -62,7 +85,7 @@ include_once('include/header.php');
                 break;
       }
 ?> 
-</main>  
+
   <?php include 'include/footer.php'; ?>
   
 
