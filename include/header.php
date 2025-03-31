@@ -73,7 +73,7 @@
                 }
                 if ($vai_tro !== 'admin') { 
               ?>
-                <img class="nav-login-search hide-mobi hide-tablet" src="asset/img/search.png" alt=""/>
+                <img class="nav-login-search hide-mobi hide-tablet" id="btn_search" src="asset/img/search.png" alt=""/>
               <?php
                 }
               ?>

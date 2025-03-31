@@ -102,7 +102,7 @@
                 }
                 if ($vai_tro !== 'admin') { 
               ?>
-                <img class="nav-login-search hide-mobi hide-tablet" src="../asset/img/search.png" alt=""/>
+                <img class="nav-login-search hide-mobi hide-tablet" id="btn_search" src="../asset/img/search.png" alt=""/>
               <?php
                 }
               ?>
@@ -291,6 +291,14 @@
           </div>
         </div>
 
+        <div class="container-full search_product_mains" id="box_search">
+          <div class="search_product_main">
+            <h1>Tìm Kiếm Sản Phẩm Yêu Thích Của Bạn</h1>
+            <form action="include/Search_product.php" method="post">
+              <input type="text" name="txt_search" id="" placeholder="NHẬP TÌM KIẾM CỦA BẠN">
+            </form>
+          </div>
+        </div>
       <footer>
         <div class="container-full bg-footer">
           <div class="container-center footer">
@@ -347,6 +355,7 @@
     <script src="../asset/js/animation.js"></script>
     <script src="../asset/js/navbar.js"></script>
     <script src="../asset/js/bars.js"></script>
+    <script src="../asset/js/search.js"></script>
     <script src="../asset/js/so_luong_product.js"></script>
   </body>
 </html>

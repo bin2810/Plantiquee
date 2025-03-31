@@ -807,6 +807,32 @@ main{
 }
 
 
+.search_product_mains{
+  position: fixed;
+  top: 15%;
+  z-index: 999999;
+  background-color: var(--bgnav-color);
+  display: flex;
+  justify-content: center;
+  padding: 1.4rem;
+  transition: top 0/3s ease-in-out;
+}
+.search_product_main{
+  width: 50rem;
+}
+.search_product_main h1{
+  font-size: 1.5rem;
+  padding: 2rem 0;
+  text-align: center;
+}
+.search_product_main input{
+  width: 100%;
+  border: 0.2rem solid var(--green-color);
+  outline-style: none;
+  padding: 1rem;
+
+}
+
 .bg-footer{
   background-color: var(--green-color);
   padding: 4rem 0 2rem 0;

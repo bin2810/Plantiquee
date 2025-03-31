@@ -29,10 +29,11 @@
                         $error_message = "Có lỗi xảy ra, vui lòng thử lại!";
                         break;
                 }
+                // history.replaceState giúp ko tải lại trang 
                 $url = "index.php?act=login";
-    echo "<script>
-            history.replaceState({}, '', '$url');
-          </script>";
+                echo "<script>
+                        history.replaceState({}, '', '$url'); 
+                    </script>";
             }
         ?>
         <div class="container-full bg-login">
