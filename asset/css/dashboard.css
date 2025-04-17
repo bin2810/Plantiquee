@@ -1,0 +1,127 @@
+.bg-dashboard{
+    margin: 20rem 0;
+}
+
+.dashboard{
+    display: flex;
+    width: 140rem;
+    margin: 15rem auto 15rem auto;
+    gap: 5rem;
+}
+
+.menu-navigation-bar{
+    padding: 5rem;
+    position: sticky;
+    top: 80px;
+    left: 0;
+    height: 100%;
+}
+.dashboard-content{
+    padding: 2rem;
+}
+
+.menu-navigation-item{
+    padding: 0.8rem 0;
+    border-bottom: 2px solid var(--green-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu-navigation-item a{
+    text-decoration: none;
+    color: var(--green-color);
+    font-size: 2rem;
+}
+.menu-navigation-item i{
+    margin-left: 2rem;
+    text-decoration: none;
+    color: var(--green-color);
+    font-size: 1.8rem;
+}
+
+.dashboard-content{
+    flex: 1 ;
+}
+
+.bangdieukhien p{
+    font-size: 2.8rem;
+}
+
+.donhang p{
+    font-size: 2.8rem;
+}
+.phieugiamgia p{
+    font-size: 2.8rem;
+}
+
+.diachi{
+    display: flex;
+    justify-content: space-between;
+}
+
+.diachi-col{
+    flex: 1;
+}
+.diachi-col p{
+    font-size: 2.8rem;
+}
+
+.img_chitiettaikhoan{
+    display: flex;
+    justify-content: center;
+}
+.img_chitiettaikhoan img{
+    width: 150px;
+    border-radius: 100%;
+}
+
+.dashboard {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+}
+.doimatkhau h3{
+    font-size: 2rem;
+    line-height: 10rem;
+    color: var(--green-color);
+}
+
+.form-taikhoan {
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 2rem;
+    color: var(--green-color);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.btn-luuthaydoi {
+    background-color: #234d20;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}

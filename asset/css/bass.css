@@ -1,0 +1,40 @@
+:root{
+    --green-color:#224229;
+    --PalePink-color: #F6CFB2;
+    --Linen-color:#F5F0E6;
+    --bgnav-color:#FCF9F3;
+    --bg-color:rgb(246, 207, 178,0.6);
+}
+body{
+    background-color: var(--bgnav-color);
+}
+*{
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700&display=swap');
+
+
+
+html{
+    font-size: 62.5%;
+    font-family: 'Jost', sans-serif;
+
+    line-height: 1.15em;
+}
+
+.container-full{
+    width: 100%;
+}
+.container-center{
+    width: 1400px;
+    margin: 0 auto;
+}

@@ -1,0 +1,88 @@
+/* ----------------login-------------- */
+
+
+.bg-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20rem 0 10rem 0;
+    height: 50rem;
+  }
+  .login{
+    width: 500px;
+    /* margin: 2rem auto; */
+    /* background-color: #b7764e; */
+  }
+  .hide-login{
+    display: none;
+  }
+  
+  .header-login{
+    width: 100%;
+    margin-bottom: 1rem ;
+  }
+  .header-login p{
+    width: 100%;
+    text-align: center;
+    font-size: 2.6rem;
+    border-bottom: 0.5rem solid var(--green-color);
+    flex: 1 1 0%;
+    padding: 1.5rem 0;
+    cursor: pointer;
+  }
+  .border-title{
+    border-bottom: 20px solid var(--green-color);
+  }
+  .title-login{
+    font-size: 2.5rem;
+    margin: 2.5rem 0;
+  }
+  
+  .tb_DN{
+    width: 100%;
+  }
+  
+  
+  
+  .title-tb{
+    font-size: 1.9rem;
+    padding: 1rem 0;
+    /* margin: 1rem 0; */
+  }
+  
+  .input-tb{
+    width: 100%;
+    padding: 1rem 0;
+    margin: 1rem 0;
+  }
+  
+  .btn-login{
+    width: 100%;
+    margin: 2rem 0 0 0;
+    padding: 1.5rem 3rem;
+    border-radius: 4rem;
+    background-color: var(--green-color);
+    color: var(--PalePink-color);
+    font-weight: bold;
+  }
+
+  #dangky, #title-dangky {
+    display: none;
+  }
+
+  .error{
+    color: red;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: right;
+  }
+  .link-signup{
+    padding: 1rem 0;
+    text-align: right;
+  }
+  .link-signup a{
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--green-color);
+  }

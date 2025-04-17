@@ -1,0 +1,185 @@
+.title_shop-product{
+    display: flex;
+    justify-content: space-between;
+    margin: 20rem 0 0 0;
+}
+.title_shop-product_h2{
+    /* text-align: center; */
+    font-size: 3.5rem;  
+}
+.shop-product{
+    margin: 5rem 0 5rem 0;
+    display: flex;
+    gap: 4rem;
+
+}
+.shop-product-left{
+    /* background-color: aquamarine; */
+    height: 100%;
+    width:  100%;
+    flex:   30%;
+    position: sticky;
+    top: 10%;
+}
+
+.shop-product-right{
+    /* background-color: aquamarine; */
+    height: 100%;
+    width:  100%;
+
+}
+.header-shop-product{
+    font-size: 2.2rem;
+    padding: 2rem;
+    border-top: 0.1rem solid var(--green-color);
+    cursor: pointer;
+}
+.shop-product-content{
+    display: none;
+    padding: 0 2rem;
+
+}
+.shop-product-content label{
+    display: block;
+    font-size: 1.6rem;
+    padding: 1rem ;
+}
+.shop-product-content input{
+   display: none;
+}
+
+.btn-shop-product {
+  width: 25px;
+  height: 25px;
+  border: 2px solid #333;
+  display: inline-block;
+  position: relative;
+  margin: 0 1rem 0 0;
+  border-radius: 20rem;
+}
+
+.shop-product-content input:checked + .btn-shop-product {
+  background-color: var(--green-color); 
+  border-color: var(--green-color);
+}
+
+.shop-product-content input:checked + .btn-shop-product::after {
+  content: '✔';
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.shop-product-list{
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    gap: 2rem;
+}
+
+.shop-product-item {
+    padding: 0.5rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.6rem;
+    cursor: pointer;
+    /* position: relative; */
+
+}
+
+.shop-product-item-col-img img{
+    
+  width: 100%;
+  border-radius: 1rem;
+
+}
+.shop-product-item-col-img{
+    position: relative;
+    width: 100%;
+    height: 390px;
+    overflow: hidden;
+    border-radius: 1rem;
+
+}
+
+.shop-btnaddcart{
+    position: absolute;
+    bottom: 2rem;
+    left:1.8rem;
+    width: 90%;
+    background-color: var(--PalePink-color);
+    color: var(--green-color);
+    font-weight: bold;
+    border-radius: 2rem;
+    padding: 1rem;
+    border: 1px solid var(--green-color);
+    transform: translateY(60px);
+    transition: transform 0.3s ease-in-out; 
+  }
+  .shop-btnaddcart:hover{
+    background-color: var(--green-color);
+    color: var(--PalePink-color);
+  }
+  .shop-product-item-col-img:hover .shop-btnaddcart{
+    transform: translateY(0px);
+  }
+.product-color{
+    padding: 2rem 0;
+}
+
+.discount::before{
+    position: absolute;
+    content: "Giảm 30%";
+    top: 1rem;
+    left: 2rem;
+    /* width: 100%; */
+    background-color: var(--PalePink-color);
+    display: block;
+    color: var(--green-color);
+    padding: 1rem 2rem;
+    border-radius: 4rem;
+    font-size: 1.3rem;
+    font-weight: bolder;
+  }
+
+
+
+  .phantrang {
+    text-align: right;
+    margin-top: 20px;
+  }
+  
+  .phantrang a, .phantrang span {
+    display: inline-block;
+    padding: 10px 12px;
+    margin: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  
+  .phantrang a {
+    color: var(--PalePink-color);
+    font-weight: bold;
+    border: 0.2rem solid var(--green-color);
+  }
+  
+  .phantrang a:hover {
+    background-color:var(--green-color);
+  }
+  
+  .phantrang span {
+    background-color: var(--green-color);
+    color: var(--PalePink-color);
+    font-weight: bold;
+    border: 1px solid var(--bgnav-color);
+  }
+  
+  
