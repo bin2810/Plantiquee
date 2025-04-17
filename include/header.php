@@ -40,7 +40,7 @@
                           <div class="cart-item-content">
                             <span><?=$name?></span><br>
                             <span>Giá:<?=number_format($price, 0, ',', '.')?>đ</span><br>
-                            <span>Số lượng:<button>-</button> <?=$qty?> <button>+</button></span><br>
+                            <span>Số lượng:<?=$qty?></span><br>
                             <form action="include/clear_cart.php" method="post">
                               <input type="hidden" name="product_id" value="<?=$id?>">
                               <button type="submit">Xóa</button>
