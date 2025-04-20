@@ -48,3 +48,40 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+
+
+// show hide password cũ
+function togglePassword(icon, inputId) {
+    const input = document.getElementById(inputId);
+    const isHidden = input.type === 'password';
+    input.type = isHidden ? 'text' : 'password';
+    icon.classList.toggle('fa-eye');
+    icon.classList.toggle('fa-eye-slash');
+}
+
+
+
+function validateEmail() {
+    const email = document.getElementById("email").value;
+    const cccd = document.getElementById("cccd").value;
+    const sdt = document.getElementById("sdt").value;
+    const regex_email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const regex_cccd = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const regex_sdt = /^0\d{9}$/;
+    
+    if (!regex_email.test(email)) {
+        document.getElementById("email-error").textContent = "Email không hợp lệ!";
+        return false; // chặn form submit
+    }
+    if (!/^\d{12}$/.test(cccd)) {
+        document.getElementById("cccd-error").textContent = "CCCD phải đủ 12 chữ số";
+        return false;
+    }
+    if (!regex_sdt.test(sdt)) {
+        document.getElementById("sdt-error").textContent = "Số điện thoại không hợp lệ!";
+        return false;
+    }
+    return true;
+}

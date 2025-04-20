@@ -50,14 +50,14 @@
         $stmt_email->bindValue(':Email' , $email);
         $stmt_email->execute();
 
-        $email = $stmt_email->fetch(PDO::FETCH_ASSOC);
+        $email_check = $stmt_email->fetch(PDO::FETCH_ASSOC);
 
         // var_dump($user);
 
         if($user){
             header('location: ../index.php?act=signup&error=kt_tontai_user');
             exit();
-        }elseif($email){
+        }elseif($email_check){
             header('location: ../index.php?act=signup&error=kt_tontai_email');
             exit();
         }else {

@@ -17,7 +17,7 @@
                         <div class="img_chitiettaikhoan">
                             <img src="asset/img/user/<?=$_SESSION['user']['Hinhanh']?>" alt="">
                         </div>
-                        <form action="include/update_user.php" method="post" class="form-taikhoan" enctype="multipart/form-data">
+                        <form action="include/update_user.php" method="post" id="form-thongtin" class="form-taikhoan" enctype="multipart/form-data" onsubmit="return validateEmail();">
                             <div class="form-group">
                                 <label for="">HÌNH ẢNH</label>
                                 <input type="file" name="hinh_moi">
@@ -46,11 +46,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="text" name="Email"  value="<?=$_SESSION['user']['Email']?>">
+                                <input type="text" name="Email" id="email" value="<?=$_SESSION['user']['Email']?>" placeholder="abc@example.com" required>
                             </div>
                             <div class="form-group">
                                 <label for="email">Số Điện Thoại</label>
-                                <input type="number" name="SDT"  value="<?=$_SESSION['user']['SDT']?>">
+                                <input type="number" name="SDT" id="sdt"  value="<?=$_SESSION['user']['SDT']?>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                             </div>
                             <div class="form-group">
                                 <label for="email">Ngày Sinh</label>
@@ -58,26 +58,38 @@
                             </div>
                             <div class="form-group">
                                 <label for="email">CĂN CƯỚC CÔNG DÂN</label>
-                                <input type="number" name="CCCD"  value="<?=$_SESSION['user']['CCCD']?>">
+                                <input type="number" name="CCCD" id="cccd"  value="<?=$_SESSION['user']['CCCD']?>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                             </div>
-
+                            
                             <div class="doimatkhau">
                                 <h3>Thay đổi mật khẩu</h3>
-                                <div class="form-group">
+                                <div class="form-group password-toggle-group">
                                     <label for="matkhaucu">MẬT KHẨU HIỆN TẠI</label>
-                                    <input type="password" name="Password" value="<?=$_SESSION['user']['Password']?>">
+                                    <div class="password-wrapper">
+                                        <input type="password" name="Password" id="matkhaucu" class="password-input" value="<?=$_SESSION['user']['Password']?>">
+                                        <i class="fa-regular fa-eye toggle-password" onclick="togglePassword(this, 'matkhaucu')"></i>
+                                    </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group password-toggle-group">
                                     <label for="matkhaumoi">MẬT KHẨU MỚI (ĐỂ TRỐNG ĐỂ KHÔNG THAY ĐỔI)</label>
-                                    <input type="password" name="Password_new" id="matkhaumoi">
+                                    <div class="password-wrapper">
+                                        <input type="password" name="Password_new" id="matkhaumoi">
+                                        <i class="fa-regular fa-eye toggle-password" onclick="togglePassword(this, 'matkhaumoi')"></i>
+                                    </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group password-toggle-group">
                                     <label for="xacnhanmatkhaumoi">XÁC NHẬN MẬT KHẨU MỚI</label>
-                                    <input type="password" name="Password_confirm" id="xacnhanmatkhaumoi">
+                                    <div class="password-wrapper">
+                                        <input type="password" name="Password_confirm" id="xacnhanmatkhaumoi">
+                                        <i class="fa-regular fa-eye toggle-password" onclick="togglePassword(this, 'xacnhanmatkhaumoi')"></i>
+                                    </div>
                                 </div>
                             </div>
                             <input type="hidden" name="id_user" value="<?=$_SESSION['user']['id']?>">
                             <input type="hidden" name="hinh_cu" value="<?=$_SESSION['user']['Hinhanh']?>">
+                            <div class="error-text" id="email-error"></div>
+                            <div class="error-text" id="cccd-error"></div>
+                            <div class="error-text" id="sdt-error"></div>
                             <button type="submit" name="update_user" class="btn-luuthaydoi">LƯU THAY ĐỔI</button>
                         </form>
                     </div>

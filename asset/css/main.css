@@ -943,7 +943,7 @@ main{
 
 .search_product_mains{
   position: fixed;
-  top: 15%;
+  top: 12%;
   z-index: 999999;
   background-color: var(--bgnav-color);
   display: flex;

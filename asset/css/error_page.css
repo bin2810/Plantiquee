@@ -1,0 +1,42 @@
+ 
+.error_page{
+  background-color: var(--green-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--PalePink-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+.error_page h1 {
+  font-size: 120px;
+  font-weight: bold;
+  color: var(--PalePink-color);
+  line-height: 160px;
+}
+.error_page h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.error_page p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.error_page a {
+  padding: 1.6rem 2.5rem;
+  background-color: var(--green-color);
+  color: var(--PalePink-color);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.error_page a:hover {
+    color: var(--green-color);
+    background-color: var(--PalePink-color);
+
+
+}

@@ -3,28 +3,25 @@
 ?>
     <div class="container-full">
         <div class="container-center">
-            
+        
+
             <div class="title_shop-product">
-                <?php
-                    foreach ($danhmuc as $dm) {
-                ?>
-                <h2 class="title_shop-product_h2">TẤT CẢ LOẠI <?=$dm['TENDM_cha']?> </h2>
-                <?php
-                    }
-                ?>
+            <?php if (!empty($product)){ ?>
+                <h2 class="title_shop-product_h2">TẤT CẢ LOẠI <?= $product[0]['TENDM_cha'] ?></h2>
+            <?php } ?>
             </div>
             
             <div class="shop-product">
                 <div class="shop-product-left">
                     
-                    
+                   
 
                 <div class="shop-product-left">
                     <div class="shop-product-section">
                         <div class="header-shop-product">Loại Cây</div>
                         <div class="shop-product-content">
                             <?php
-                                foreach ($dmcon_list as $dmcon) {  
+                                foreach ($loaisp as $dmcon) {  
                                     // Kiểm tra xem MADM_con có tồn tại trong URL tham số loc hay không
                                     $isChecked = isset($_GET['loc']) && $_GET['loc'] == $dmcon['MADM_con'] ? 'checked' : '';
                             ?>
@@ -59,14 +56,16 @@
                         <div class="shop-product-item">
                             <div class="shop-product-item-col-img <?=$sp['TinhTrang']?>">
                                 <a href="page/Sanpham_CT.php?id=<?=$sp['SanPham_id']?>"><img src="asset/img/sanpham/<?=$sp['MA_DM_con']?>/<?=$sp['Ten_Khoa_Hoc']?>/<?=$sp['HinhAnh']?>" alt="" /></a>
-                                <button class="shop-btnaddcart">Thêm Vào Giõ Hàng</button>
+                                <!-- <button class="shop-btnaddcart">Thêm Vào Giõ Hàng</button> -->
 
-                                <form class="addtocardform" action="include/add_to_cart.php" method="post">
+                                <form class="addtocardform" action="include/add_to_cart_chitiet.php" method="post">
                                     <input type="hidden" name="product_id" value="<?=$sp['SanPham_id']?>">
                                     <input type="hidden" name="product_img" value="<?=$sp['MA_DM_con']?>/<?=$sp['Ten_Khoa_Hoc']?>/<?=$sp['HinhAnh']?>">
                                     <input type="hidden" name="product_prive" value="<?=$sp['DonGia']?>">
                                     <input type="hidden" name="product_name" value="<?=$sp['TenSP']?>">
                                     <input type="hidden" name="quantity" value="1">
+                                    <input type="hidden" name="product_MA_DM_con" value="<?=$sp['MA_DM_con']?>">
+
                                 
                                     <button class="shop-btnaddcart">Thêm Vào Giõ Hàng</button>
                                 </form>

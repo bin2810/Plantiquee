@@ -95,7 +95,7 @@
                        
                         <tr>
                           <?php
-                            $i =1;
+                            $i = $vtbd+1;
                             foreach ($danhsach as $sanpham) {
                           ?>
                           <td class="min-width">  

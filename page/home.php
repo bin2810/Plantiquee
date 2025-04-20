@@ -47,6 +47,9 @@
                   </div>
                   <div class="product-item-col-information-col-right">
                   <?php
+                    if(isset($HMV['Tinhtrang'])){
+                      
+                    }
                     $giasp = number_format($HMV['DonGia'],0,',','.');
                   ?>
                     <p><?=$giasp?> VND</p>

@@ -4,11 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="icon" type="image/png" href="/plantiquee/asset/img/logo-tab.png" /> -->
-    <!-- <link rel="shortcut icon" href="http://localhost/plantiquee/asset/img/favicon.ico" type="image/x-icon" /> -->
-    <!-- <link rel="icon" href="http://localhost/plantiquee/asset/img/favicon.ico" type="image/x-icon"> -->
-    <!-- <link rel="shortcut icon" href="/asset/img/favicon.ico"/> -->
-    <!-- <link rel="stylesheet" href="http://www.example.com/favicon.ico"/> -->
+    <link rel="icon" type="image/png" href="asset/img/logo-tab.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link rel="stylesheet" href="asset/css/resset.css"/>
     <link rel="stylesheet" href="asset/css/bass.css"/>
@@ -18,9 +14,64 @@
     <link rel="stylesheet" href="asset/css/Product.css" />
     <link rel="stylesheet" href="asset/css/Product_ct.css" />
     <link rel="stylesheet" href="asset/css/dashboard.css"/>
+    <link rel="stylesheet" href="asset/css/error_page.css"/>
     <link rel="stylesheet" href="asset/css/responsive.css" />
     
-    <title></title>
+    <?php 
+  $page = isset($_GET['act']) ? $_GET['act'] : 'home'; 
+
+  switch ($page) {
+    case 'home':
+      $title = 'Trang Chủ';
+      break;
+    case 'login':
+    case 'login_inc':
+      $title = 'Đăng Nhập';
+      break;
+    case 'signup':
+      $title = 'Đăng Ký';
+      break;
+    case 'dashboard':
+    case 'bangdieukien':
+      $title = 'Bảng Điều Khiển';
+      break;
+    case 'donhang':
+      $title = 'Đơn Hàng';
+      break;
+    case 'phieugiamgia':
+      $title = 'Phiếu Giảm Giá';
+      break;
+    case 'diachi':
+      $title = 'Địa Chỉ';
+      break;
+    case 'chitiettaikhoan':
+      $title = 'Tài Khoản';
+      break;
+    case 'CT':
+      $title = 'Cây Trồng';
+      break;
+    case 'DC':
+        $title = 'Dụng Cụ';
+      break;
+    case 'HH':
+        $title = 'Học Hỏi';
+      break;
+    case 'QT':
+        $title = 'Quà Tặng';
+      break;
+    case 'TQT':
+      $title = 'Thẻ Quà Tặng';
+      break;
+    case 'about':
+      $title = 'Về Chúng Tôi';
+      break;
+    default:
+      $title = 'Lỗi 404';
+      break;
+  }
+?>
+<title><?php echo $title; ?></title>
+
   </head>
   <body>
 
@@ -82,7 +133,7 @@ include_once('include/header.php');
                 include 'page/about.php';
                 break;
             default:
-                echo "<h2>404 - Trang không tồn tại</h2>";
+                include 'page/error_page.php';
                 break;
       }
 ?> 

@@ -15,12 +15,11 @@
             
          
             if (count($products) > 0) {
-                
                 $product = $products[0]; 
                 header("Location: ../page/Sanpham_CT.php?id=" . $product['SanPham_id']);
                 exit;
             } else {
-                echo "Không tìm thấy sản phẩm.";
+                header("location: ../index.php?act=d");
             }
         }
     }

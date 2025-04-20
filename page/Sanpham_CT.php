@@ -38,44 +38,73 @@
     <title><?=$chi_tiet_product[0]['TenSP']?></title>
   </head>
   <body>
-  <div class="main_card">
-  <div class="overlay" id="overlay" onclick="toggleCart()"></div>
-  <div class="cart-sidebar" id="cartSidebar">
-  <button class="close-cart" onclick="toggleCart()">✖</button>
-    <h2>Giỏ hàng của bạn</h2>
-        <?php
-              $total_quantity = 0;
-              if (empty($_SESSION['cart']) || !is_array($_SESSION['cart'])) {
-                echo "🛒 Giỏ hàng trống.";
-              } else {
-                  foreach ($_SESSION['cart'] as $item) {
-                      $id = $item['product_id'];
-                      $name = $item['product_name'];
-                      $img = $item['product_img'];
-                      $price = $item['product_price'];
-                      $qty = $item['quantity'];
-                      $total = $price * $qty;
-
-                      echo "
-                        <div class='cart-item'>
-                            <img src='../asset/img/sanpham/$img' width='50' height='50' alt='$name'>
-                            <strong>$name</strong><br>
-                            Giá: " . number_format($price, 0, ',', '.') . " đ<br>
-                            Số lượng: $qty<br>
-                            Thành tiền: " . number_format($total, 0, ',', '.') . " đ
-                            <hr>
-                        </div>";
-
-                      $total_quantity += $item['quantity'];
-                     
-                      
-                  }
+  <div class="main_cart">
+          <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+          <div class="cart-sidebar" id="cartSidebar">
+            <div class="cart-sidebar-header">
+              <h2>Giỏ hàng của bạn</h2>
+              <button class="close-cart" onclick="toggleCart()">✖</button>
+              
+            </div>
+            <div class='cart-item'>
+              <?php
+                $total_quantity = 0;
+                $total_price = 0;
+                if (empty($_SESSION['cart']) || !is_array($_SESSION['cart'])) {
+                  echo "Giỏ hàng trống.";
+                } else {
                   
+                    foreach ($_SESSION['cart'] as $item) {
+                        $id = $item['product_id'];
+                        $name = $item['product_name'];
+                        $img = $item['product_img'];
+                        $price = $item['product_price'];
+                        $qty = $item['quantity'];
+                        $total = $price * $qty;
+                    
+              ?>
+                        <div class='cart-item-content-big'>
+                          <div class="cart-item-img">
+                            <img src='../asset/img/sanpham/<?=$img?>' width="100%" alt='$name'>
+                          </div>
+                          <div class="cart-item-content">
+                            <span><?=$name?></span><br>
+                            <span>Giá:<?=number_format($price, 0, ',', '.')?>đ</span><br>
+                            <span>Số lượng:<?=$qty?></span><br>
+                            <form action="../include/clear_cart.php" method="post">
+                              <input type="hidden" name="product_id" value="<?=$id?>">
+                              <button type="submit">Xóa</button>
+                            </form>
+                          </div>
+                        </div>
+                        
+
+              <?php
+                        $total_quantity += $item['quantity'];
+                        $total_price += $total;
+                        
+                      }
+                    }
+                    
                   
-              }
-        ?>
-    <a href="../include/clear_cart.php">xóa</a>
-  </div>
+              ?>
+            </div>
+            <?php
+            if (empty($_SESSION['cart']) || !is_array($_SESSION['cart'])) {
+            ?>
+              <a href="" class="btn-checkout">Tiếp Tục Mua Sắm</a>
+            <?php
+              
+            } else {
+            ?>
+                <span>Thành tiền: <?=number_format($total_price, 0, ',', '.')?></span> 
+                <form action="page/checkout.php" method="post">
+                  <button type="submit" class="btn-checkout">Thanh Toán</button>
+                </form>
+                <?php
+            }
+                ?>
+          </div>
           
           
 </div>
@@ -205,7 +234,7 @@
                                   <button id="tang" class="btn_addcart">+</button>
                                 </div>
                                 <div class="product_ct_right_addtocart_button">
-                                <form class="addtocardform" action="../include/add_to_cart.php" method="post">
+                                <form class="addtocardform" action="../include/add_to_cart_chitiet.php" method="post">
                                   <input type="hidden" name="product_id" value="<?=$CT_Product['SanPham_id']?>">
                                   <input type="hidden" name="product_img" value="<?=$CT_Product['MA_DM_con']?>/<?=$CT_Product['Ten_Khoa_Hoc']?>/<?=$CT_Product['HinhAnh']?>">
                                   <input type="hidden" name="product_prive" value="<?=$CT_Product['DonGia']?>">

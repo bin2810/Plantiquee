@@ -5,6 +5,17 @@
     $id_user = $_POST['id_user'];
     $Username = $_POST['Username'];
     $Password = $_POST['Password'];
+    $newPassword = $_POST['Password_new'] ?? '';
+    $confirmPassword = $_POST['Password_confirm'] ?? '';  
+    // Nếu người dùng nhập mật khẩu mới và xác nhận đúng thì cập nhật
+    if (!empty($newPassword)) {
+      if ($newPassword === $confirmPassword) {
+          $Password = $newPassword;
+      } else {
+          echo "không khớp";
+          exit;
+      }
+    }
     $Fullname = $_POST['Fullname'];
     $Email = $_POST['Email'];
     $gioitinh = $_POST['gioitinh'];
