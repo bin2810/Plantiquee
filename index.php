@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -113,6 +112,9 @@ include_once('include/header.php');
                     break;
                 case 'chitiettaikhoan':
                     include 'page/chitiettaikhoan.php';
+                    break;
+                case 'chitietdonhang':
+                    include 'page/chitietdonhang.php';
                     break;
             case 'CT':
                 include 'page/Sanpham.php';

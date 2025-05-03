@@ -1,0 +1,103 @@
+<?php
+    $madh = $_GET['madon'] ?? null;
+?>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đặt hàng thành công</title>
+    <link rel="stylesheet" href="../asset/css/bass.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color:var(--green-color);
+            color: #2e2e2e;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 80px auto;
+            padding: 40px 24px;
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px #e9f6ef;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            color: #2e5e4e;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .order-id {
+            font-weight: bold;
+            color: #2e5e4e;
+            font-size: 20px;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 32px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: 0.3s ease;
+        }
+
+        .btn-detail {
+            background-color: #2e5e4e;
+            color: white;
+        }
+
+        .btn-detail:hover {
+            background-color: #264d41;
+        }
+
+        .btn-shop {
+            background-color: #e9f6ef;
+            color: #2e5e4e;
+        }
+
+        .btn-shop:hover {
+            background-color: #d3eedf;
+        }
+
+        @media (max-width: 480px) {
+            .btn-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🌿 Cảm ơn bạn đã đặt hàng!</h1>
+    <p>Đơn hàng của bạn đã được xác nhận thành công.<br>
+    Mã đơn hàng của bạn là:<br>
+    <span class="order-id">#<?=$madh?></span></p>
+
+    <div class="btn-group">
+        <a href="../index.php?act=chitietdonhang&id=<?=$madh?>" class="btn btn-detail">📄 Xem chi tiết đơn hàng</a>
+        <a href="../index.php" class="btn btn-shop">Tiếp tục mua sắm</a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -23,7 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ];
 }
 
-header('location: ../');
+// header('location: ../');
+        header('location: '. $_SERVER['HTTP_REFERER']);
     } else {
         echo "Thiếu dữ liệu";
     }

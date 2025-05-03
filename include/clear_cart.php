@@ -13,5 +13,6 @@ if (isset($_POST['product_id'])) {
     $_SESSION['cart_quantity'] = array_sum(array_column($_SESSION['cart'], 'quantity'));
 }
 
-header('Location: ../index.php');
+// header('Location: ../index.php');
+header('location: '. $_SERVER['HTTP_REFERER']);
 exit();

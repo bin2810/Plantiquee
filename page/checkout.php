@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include_once('../include/database.php');
 // Kiểm tra đăng nhập
 if (!isset($_SESSION['user'])) {
     // Nếu chưa đăng nhập thì chuyển về trang login
@@ -13,6 +13,8 @@ if (empty($_SESSION['cart'])) {
   echo "<h2>Giỏ hàng trống!</h2>";
   exit;
 }
+
+
 
 $total_price = 0;
 
@@ -56,39 +58,35 @@ $tinhThanhVN = [
 
       <div class="separator">HOẶC</div>
 
-      <form class="checkout-form">
+      <form class="checkout-form" action="process-oders.php" method="post">
         <h3>Liên hệ</h3>
-        <input type="email" placeholder="Email của bạn" value="<?=$_SESSION['user']['Email']?>" required/>
-        <!-- <label class="checkbox-row">
-          <input type="checkbox" checked/>
-          Nhận thông tin và ưu đãi qua email
-        </label> -->
-
+        <input type="email" name="email_kh" placeholder="email" value="<?=$_SESSION['user']['Email']?>" required/>
         <h3>Địa chỉ thanh toán</h3>
-        <select>
+        <select name="country_kh">
           <option>Chọn quốc gia</option>
           <option value="Việt Nam">Việt Nam</option>
         </select>
 
         <div class="row">
-          <input type="text" placeholder="Họ Và Tên" value="<?=$_SESSION['user']['name']?>" />
+          <input type="text" name="name_kh" placeholder="Tên Khách Hàng" value="<?=$_SESSION['user']['name']?>" />
           <!-- <input type="text" placeholder="Tên" /> -->
         </div>
-        <input type="text" placeholder="Địa chỉ cụ thể" value="<?=$_SESSION['user']['DiaChi']?>"/>
-        <input type="text" placeholder="Căn hộ, tầng, toà nhà (nếu có)" />
+        <input type="text" name="address_kh" placeholder="Địa Chỉ Giao Hàng" value="<?=$_SESSION['user']['DiaChi']?>"/>
+        <!-- <input type="text" placeholder="Căn hộ, tầng, toà nhà (nếu có)" /> -->
         <div class="row">
-          <select>
+          <select name="city_kh">
             <?php foreach ($tinhThanhVN as $thanhpho): ?>
               <option value="<?=$thanhpho?>"><?=$thanhpho?></option>
             <?php endforeach; ?>
           </select>
         </div>
-        <input type="tel" placeholder="Số điện thoại" value="<?=$_SESSION['user']['SDT']?>"/>
+        <input type="text" name="sdt_kh" placeholder="Số điện thoại" value="<?=$_SESSION['user']['SDT']?>"/>
         <!-- <label class="checkbox-row">
           <input type="checkbox" />
           Nhận cập nhật đơn hàng qua tin nhắn
         </label> -->
-        <button class="submit-btn">Tiếp tục thanh toán</button>
+        <input type="hidden" name="id_user" value="<?=$_SESSION['user']['id']?>">
+        <button class="submit-btn" name="submit-checkout">Tiếp tục thanh toán</button>
       </form>
 
       <div class="footer">

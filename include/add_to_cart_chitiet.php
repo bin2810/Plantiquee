@@ -23,25 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'quantity' => $quantity
             ];
         }
-        if($ma_dm_con == "BCN"){
-            header('location: ../index.php?act=CT');
-            exit();
-        }elseif($ma_dm_con == "HMV"){
-            header('location: ../index.php?act=CT&loc=HMV');
-            exit();
-        }elseif($ma_dm_con == "QTGD"){
-            header('location: ../index.php?act=QT');
-            exit();
-        }elseif($ma_dm_con == "CC"){
-            header('location: ../index.php?act=DC');
-            exit();
-        }elseif($product_id == $product_id){
-            header('Location: ../page/Sanpham_CT.php?id=' . $product_id);
-            exit();
-        }else{
-            header('location: .../page/error_page.php');
-            exit();
-        }
+        
+        header('location: '. $_SERVER['HTTP_REFERER']); //giữa nguyên đường dẫn ko chuyển về trang chủ mặc định
+
+
     }else {
         echo "Thiếu dữ liệu";
     }

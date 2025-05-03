@@ -51,7 +51,7 @@
                 $total_quantity = 0;
                 $total_price = 0;
                 if (empty($_SESSION['cart']) || !is_array($_SESSION['cart'])) {
-                  echo "Giỏ hàng trống.";
+                  echo "🛒 Giỏ hàng trống.";
                 } else {
                   
                     foreach ($_SESSION['cart'] as $item) {
@@ -75,6 +75,7 @@
                               <input type="hidden" name="product_id" value="<?=$id?>">
                               <button type="submit">Xóa</button>
                             </form>
+                            <!-- <a href="include/clear_cart.php">xóa</a> -->
                           </div>
                         </div>
                         
@@ -98,7 +99,7 @@
             } else {
             ?>
                 <span>Thành tiền: <?=number_format($total_price, 0, ',', '.')?></span> 
-                <form action="page/checkout.php" method="post">
+                <form action="../page/checkout.php" method="post">
                   <button type="submit" class="btn-checkout">Thanh Toán</button>
                 </form>
                 <?php

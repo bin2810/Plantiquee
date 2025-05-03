@@ -153,3 +153,125 @@
     font-size: 3rem;
     margin: 4rem 0;
 }
+
+
+
+.order-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.order-card {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.order-card:hover {
+    transform: translateY(-4px);
+}
+
+.order-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.order-date {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.order-card-body p {
+    margin: 20px 0;
+    color: #444;
+    font-size: 20px;
+}
+
+.order-detail-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 14px;
+    background-color: #27ae60;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.order-detail-btn:hover {
+    background-color: #219150;
+}
+
+
+
+
+
+
+
+
+.order-detail-container {
+    max-width: 1000px;
+    margin: 200px  auto 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.order-detail-container h2 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.order-detail-container p {
+    margin: 4px 0;
+    color: #555;
+}
+
+.product-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-card {
+    display: flex;
+    gap: 20px;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 12px;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.product-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product-info h3 {
+    margin-bottom: 6px;
+    font-size: 18px;
+    color: #333;
+}
+
+.total-section {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #27ae60;
+}

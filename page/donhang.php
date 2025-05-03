@@ -12,11 +12,52 @@
                         <li class="menu-navigation-item"><a href="page/logout.php">Đăng Xuất</a><i class="fa-solid fa-right-from-bracket"></i></li>
                     </ul>
                 </div>
+                
+
                 <div class="dashboard-content">
-                <div class="donhang">
-    <p><a href="">Đi đến đơn hàng</a>Bạn chưa có đơn nào thực hiện</p>
-</div>
-                    
+                    <div class="donhang">
+                        <?php
+                            $id_user = $_SESSION['user']['id'];
+
+                            // Lấy KhachHang_id từ Ma_user
+                            $sql_kh = "SELECT KhachHang_id FROM tb_Khachhang WHERE Ma_user = :id_user";
+                            $sta_kh = $conn->prepare($sql_kh);
+                            $sta_kh->bindParam(':id_user', $id_user);
+                            $sta_kh->execute();
+                            $khachhang = $sta_kh->fetch(PDO::FETCH_ASSOC);
+
+                            if ($khachhang) {
+                                $kh_id = $khachhang['KhachHang_id'];
+
+                                // Lấy đơn hàng của khách
+                                $sql_dh = "SELECT * FROM tb_donhang WHERE MaKhachHang = :kh_id";
+                                $sta_dh = $conn->prepare($sql_dh);
+                                $sta_dh->bindParam(':kh_id', $kh_id);
+                                $sta_dh->execute();
+                                $dh_list = $sta_dh->fetchAll(PDO::FETCH_OBJ);
+                                // Hiển thị ngày tạo các đơn hàng
+                                echo '<div class="order-grid">';
+                                    foreach ($dh_list as $dh) {
+                                        echo '
+                                            <div class="order-card">
+                                                <div class="order-card-header">
+                                                    <span class="order-id">Đơn hàng #' . $dh->DonHang_id . '</span>
+                                                    <span class="order-date">' . $dh->NgayTao . '</span>
+                                                </div>
+                                                <div class="order-card-body">
+                                                    <p><strong>Trạng thái:</strong> Đang xử lý</p>
+                                                    <a href="index.php?act=chitietdonhang&id=' . $dh->DonHang_id . '" class="order-detail-btn">Xem chi tiết</a>
+                                                </div>
+                                            </div>
+                                        ';
+                                    }
+                                    echo '</div>';
+
+                            } else {
+                                echo '<p><a href="">Đi đến đơn hàng</a> Bạn chưa có đơn nào thực hiện</p>';
+                            }
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
