@@ -1,5 +1,5 @@
 <?php
-  session_start();
+ 
   include('include/database.php');
 
   $query = "SELECT * FROM tb_danhmuc_chinh";
@@ -90,13 +90,14 @@
               <a href="index.php?act=home"><img src="asset/img/logo.png" alt="" /></a>
             </div>
             <i class="fa-solid fa-bars nav-bars show-tab-mobi" id="bars"></i>
+            <i class="fa-solid fa-x show-tab-mobi nav-bars" id="btn-close" style="display: none;"></i>
             
             <div class="nav-category bars-category">
               <div class="menu-list menu-search">
-                <span class="menu-item">
+                <!-- <span class="menu-item">
                   SEARCH
                   <i class="fa-solid fa-magnifying-glass"></i>
-                </span>
+                </span> -->
                 <div class="dropdown">
                   <div class="container-center dropdown-container">
                     <input type="text" name="" id="" />

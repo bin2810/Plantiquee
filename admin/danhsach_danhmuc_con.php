@@ -16,14 +16,14 @@ include_once 'header.php';
               <div class="col-md-6">
                 <div class="breadcrumb-wrapper">
                   <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                      <li class="breadcrumb-item">
-                        <a href="#0">Dashboard</a>
-                      </li>
-                      <li class="breadcrumb-item active" aria-current="page">
-                        Tables
-                      </li>
-                    </ol>
+                  
+                    <div class="col-12">
+                        <div class="button-group d-flex justify-content-center flex-wrap">
+                          <button class="main-btn primary-btn btn-hover w-100 text-center"  type="submit" onclick="window.location.href='form_danhmuc_con_add.php'">
+                            Thêm Danh Mục Con
+                          </button>
+                        </div>
+                      </div>
                   </nav>
                 </div>
               </div>
@@ -47,10 +47,6 @@ include_once 'header.php';
             <div class="row">
               <div class="col-lg-12">
                 <div class="card-style mb-30">
-                  <h6 class="mb-10">Danh Sách Danh Mục Con</h6>
-                  <p class="text-sm mb-20">
-                    Thêm xoá sửa danh mục
-                  </p>
                   <div class="table-wrapper table-responsive">
                     <table class="table">
                       <thead>

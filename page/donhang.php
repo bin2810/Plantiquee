@@ -1,5 +1,12 @@
 
 <main>
+<?php
+if (!isset($_SESSION['user']['Username'])) {
+    // Nếu chưa đăng nhập, chuyển về trang login
+    header("Location: index.php?act=login");
+    exit();
+}
+?>
         <div class="container-full bg-dashboard">
             <div class="container-center dashboard">
                 <div class="menu-navigation-bar">
@@ -20,7 +27,7 @@
                             $id_user = $_SESSION['user']['id'];
 
                             // Lấy KhachHang_id từ Ma_user
-                            $sql_kh = "SELECT KhachHang_id FROM tb_Khachhang WHERE Ma_user = :id_user";
+                            $sql_kh = "SELECT KhachHang_id FROM tb_khachhang WHERE Ma_user = :id_user";
                             $sta_kh = $conn->prepare($sql_kh);
                             $sta_kh->bindParam(':id_user', $id_user);
                             $sta_kh->execute();
@@ -42,7 +49,7 @@
                                             <div class="order-card">
                                                 <div class="order-card-header">
                                                     <span class="order-id">Đơn hàng #' . $dh->DonHang_id . '</span>
-                                                    <span class="order-date">' . $dh->NgayTao . '</span>
+                                                    <span class="order-date">' .date("d/m/Y H:i:s", strtotime($dh->NgayTao)) . '</span>
                                                 </div>
                                                 <div class="order-card-body">
                                                     <p><strong>Trạng thái:</strong> Đang xử lý</p>

@@ -13,15 +13,16 @@
           <div class="chat-body">
               <p>Xin Chào 👋🌱</p>
               <div class="chat-options">
-                  <button>Send us a message</button>
-                  <button>Order status</button>
-                  <button>Plant Care, Guidance, & Troubleshooting</button>
+                <button>Gửi tin nhắn cho chúng tôi</button>
+                <button>Kiểm tra trạng thái đơn hàng</button>
+                <button>Hướng dẫn & Hỗ trợ chăm sóc cây</button>
               </div>
           </div>
           <div class="chat-footer">
-              <p>adgfsg</p>
+              
           </div>
         </div>
+
         <div class="container-full search_product_mains" id="box_search">
           <div class="search_product_main">
             <h1>Tìm Kiếm Sản Phẩm Yêu Thích Của Bạn</h1>
@@ -39,10 +40,10 @@
             <div class="footer-content">
               <div class="footer-col">
                 <p>Về Chúng Tôi</p>
-                <a href="">Giới Thiệu</a>
+                <a href="page/about.php">Giới Thiệu</a>
                 <a href="">Tuyển Dụng</a>
                 <a href="">Đánh Giá</a>
-                <a href="">Tin Tức</a>
+                <a href="page/HocHoi.php">Học Hỏi</a>
                 <a href="">Cam Kết Của Chúng Tôi</a>
                 <a href="">Quà Tặng Doanh Nghiệp</a>
                 <a href="">Chương Trình Thương Mại</a>

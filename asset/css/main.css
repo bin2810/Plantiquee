@@ -218,8 +218,8 @@ main{
   height: 100%; */
   /* background-color: aquamarine; */
   z-index: 49999;
-  right: 2.5rem;
-  bottom: 2rem;
+  right: 2rem;
+  bottom: 2.5rem;
   transition: right 0.3s ease-in-out;
 }
 .main_chat.dich-vao {
@@ -241,59 +241,105 @@ main{
   box-shadow: 2px 4px 2px rgb(0, 0, 0,0.2);
 }
 
+
 .chat-widget {
   position: fixed;
-  bottom: 4rem;
-  right: 5rem;
-  width: 350px;
-  min-height: 600px;
-  background: linear-gradient(to bottom , var(--green-color) 20% , #ffff);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  bottom: 3rem;
+  right: 3rem;
+  width: 370px;
+  min-height: 540px;
+  background: var(--green-color);
+  border-radius: 18px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   display: none;
-  z-index: 49999;
-  transform: scale(0); 
+  transform: scale(0);
   transform-origin: bottom right;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, opacity 0.3s;
+  z-index: 99999999;
+  font-family: var(--font);
 }
+
+/* ==== HEADER ==== */
 .chat-header {
+  background: var(--green-color);
+  color: white;
+  padding: 18px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
-  padding: 10px;
-  border-radius: 10px 10px 0 0;
+  font-weight: 600;
+  font-size: 17px;
 }
 
-.user-avatars img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-left: 5px;
+.chat-header .brand {
+  font-size: 20px;
+  letter-spacing: 0.5px;
 }
 
 .close-chat {
   background: none;
   border: none;
+  font-size: 20px;
   color: white;
-  font-size: 18px;
   cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.close-chat:hover {
+  transform: rotate(90deg);
 }
 
+/* ==== BODY ==== */
 .chat-body {
-  padding: 15px;
+  padding: 24px;
+  background: white;
+  color: var(--green-color);
+}
+
+.chat-body p {
+  font-size: 16px;
+  margin-bottom: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.chat-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .chat-options button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0;
+  padding: 14px 18px;
+  background: var(--PalePink-color);
   border: none;
-  border-radius: 5px;
-  background: #eee;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--green-color);
+  text-align: left;
+  transition: all 0.2s ease;
   cursor: pointer;
 }
+.chat-options button:hover {
+  background: var(--green-color);
+  color: white;
+}
+
+/* ==== FOOTER ==== */
+.chat-footer {
+  padding: 16px;
+  background: var(--gray);
+  font-size: 13px;
+  text-align: center;
+  color: #666;
+}
+
+
+
+
+
+
 /*cart*/
 .poromo-banner{
   position: fixed;
@@ -414,6 +460,12 @@ main{
   color: var(--green-color);
   cursor: pointer;
 }
+
+
+
+
+
+
 
 
 

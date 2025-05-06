@@ -1,0 +1,60 @@
+.bg-hochoi {
+    
+    margin-top: 20rem ;
+    
+  }
+  
+  .blog-grid {
+    max-width: 1200px;
+    margin: 5rem auto; /* canh giữa theo chiều ngang */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  .blog-grid a{
+    text-decoration: none;
+  }
+  
+  .blog-item {
+    text-align: center;
+    /* background: #fff; */
+    /* border: 1px solid #eee; */
+    padding: 1rem;
+    border-radius: 8px;
+    /* box-shadow: 0 4px 10px rgba(0,0,0,0.05); */
+  }
+  
+  .blog-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  
+  
+  .category {
+    color: #4b6e3f;
+    font-size: 1.4rem;
+    font-weight: 200;
+    line-height: 1.8rem;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .title {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+  
+  .title a {
+    text-decoration: underline;
+    color: inherit;
+  }
+  
+  .title a:hover {
+    color: #4b6e3f;
+  }
+  

@@ -1,3 +1,9 @@
+<?php
+session_start();
+ob_start();
+include_once 'mail/index.php';
+$mail = new Mailer();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,6 +19,7 @@
     <link rel="stylesheet" href="asset/css/Product.css" />
     <link rel="stylesheet" href="asset/css/Product_ct.css" />
     <link rel="stylesheet" href="asset/css/dashboard.css"/>
+    <link rel="stylesheet" href="asset/css/giftcard.css"/>
     <link rel="stylesheet" href="asset/css/error_page.css"/>
     <link rel="stylesheet" href="asset/css/responsive.css" />
     
@@ -29,6 +36,9 @@
       break;
     case 'signup':
       $title = 'Đăng Ký';
+      break;
+    case 'forgotpass':
+      $title = 'Quên Mật Khẩu';
       break;
     case 'dashboard':
     case 'bangdieukien':
@@ -64,6 +74,9 @@
     case 'about':
       $title = 'Về Chúng Tôi';
       break;
+    case 'chitietdonhang':
+      $title = 'Chi Tiết Đơn Hàng';
+      break;
     default:
       $title = 'Lỗi 404';
       break;
@@ -76,6 +89,7 @@
 
 <?php 
 include_once('include/header.php');
+
 ?>
 
 
@@ -94,6 +108,15 @@ include_once('include/header.php');
                     break;
             case 'signup':
                 include 'page/signup.php';
+                break;
+            case 'forgotpass':
+                include 'page/forgot_pass.php';
+                break;
+            case 'verification':
+                include 'page/Verification.php';
+                break;
+            case 'Resetpass':
+                include 'page/ResetPass.php';
                 break;
             case 'dashboard':
                 include 'page/user_dashboard.php';
@@ -123,13 +146,13 @@ include_once('include/header.php');
                 include 'page/Sanpham.php';
                 break;
             case 'HH':
-                include 'page/Sanpham.php';
+                header('location:page/HocHoi.php');
                 break;
             case 'QT':
                 include 'page/Sanpham.php';
                 break;
             case 'TQT':
-                include 'page/Sanpham.php';
+                include 'page/giftcard.php';
                 break;
             case 'about':
                 include 'page/about.php';

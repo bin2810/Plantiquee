@@ -1,0 +1,135 @@
+
+    .container {
+      max-width: 120rem;
+      margin: 2% auto;
+      padding: 6rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4rem;
+      align-items: flex-start;
+    }
+    .left-column {
+      flex: 1;
+      min-width: 30rem;
+    }
+    .left-column h1 {
+      font-size: 4.2rem;
+      font-weight: bold;
+      margin-bottom: 2.5rem;
+      color: var(--green-color);
+    }
+    .left-column p {
+      font-size: 1.8rem;
+      line-height: 1.5;
+      margin-bottom: 3rem;
+      color: #4b4b4b;
+    }
+
+    .amount-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    .amount-btn {
+      padding: 1.4rem 2.4rem;
+      border: 1.5px solid #1a1a1a;
+      border-radius: 1.2rem;
+      background-color: white;
+      cursor: pointer;
+      font-size: 1.6rem;
+      transition: all 0.2s ease;
+    }
+    .amount-btn:hover,
+    .amount-btn.active {
+      background-color: var(--green-color);
+      color: white;
+    }
+
+    .card-designs {
+      margin-bottom: 3rem;
+    }
+    .card-designs p {
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .design-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+    .design-img {
+      width: 12rem;
+      border-radius: 1.2rem;
+      border: 0.2rem solid transparent;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .design-img:hover,
+    .design-img.active {
+      border-color: #1a1a1a;
+      transform: scale(1.03);
+    }
+
+    .form-group {
+      margin-bottom: 2rem;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 1.2rem;
+      border: 0.1rem solid #ccc;
+      border-radius: 1rem;
+      font-size: 1.5rem;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 8rem;
+    }
+
+    .send-btn {
+      padding: 1.6rem 3.2rem;
+      font-size: 1.6rem;
+      background-color: var(--green-color);
+      color: white;
+      border: none;
+      border-radius: 1.4rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .send-btn:hover {
+      background-color: var(--PalePink-color);
+      color: var(--green-color);
+
+    }
+
+    .right-column {
+        flex: 1;
+        min-width: 30rem;
+        position: sticky;
+        top: 15rem; 
+        align-self:flex-start;
+        display: flex;
+        justify-content: center;
+    }
+      
+    .right-column img {
+      max-width: 80%;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column-reverse;
+      }
+      .left-column h1 {
+        font-size: 32px;
+        text-align: center;
+      }
+    }

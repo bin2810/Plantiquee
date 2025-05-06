@@ -1,5 +1,25 @@
 
       <!-- ========== header end ========== -->
+      <?php
+        include("../include/database.php");
+
+        $query_donhang = "SELECT COUNT(*) AS tong_so_donhang FROM tb_donhang";
+        $sta = $conn->prepare($query_donhang);
+        $sta->execute();
+        $kq = $sta->fetch(PDO::FETCH_ASSOC);
+
+        $query_ctdonhang = "SELECT SUM(DonGia * SoLuong) AS tong_thu_nhap FROM tb_ctdonhang";
+        $sta1 = $conn->prepare($query_ctdonhang);
+        $sta1->execute();
+        $kq1 = $sta1->fetch(PDO::FETCH_ASSOC);
+
+        $query_user = "SELECT COUNT(*) AS tong_user FROM tb_user";
+        $sta2 = $conn->prepare($query_user);
+        $sta2->execute();
+        $kq2 = $sta2->fetch(PDO::FETCH_ASSOC);
+
+        
+      ?>
 
       <!-- ========== section start ========== -->
       <section class="section">
@@ -9,7 +29,7 @@
             <div class="row align-items-center">
               <div class="col-md-6">
                 <div class="title">
-                  <h2>eCommerce Dashboard</h2>
+                  <h2>Bảng Điều Khiển </h2>
                 </div>
               </div>
               <!-- end col -->
@@ -39,35 +59,35 @@
                   <i class="lni lni-cart-full"></i>
                 </div>
                 <div class="content">
-                  <h6 class="mb-10">New Orders</h6>
-                  <h3 class="text-bold mb-10">34567</h3>
-                  <p class="text-sm text-success">
+                  <h6 class="mb-10">Tổng Đơn Hàng</h6>
+                  <h3 class="text-bold mb-10"><?=$kq['tong_so_donhang']?> Đơn Hàng</h3>
+                  <!-- <p class="text-sm text-success">
                     <i class="lni lni-arrow-up"></i> +2.00%
                     <span class="text-gray">(30 days)</span>
-                  </p>
+                  </p> -->
                 </div>
               </div>
               <!-- End Icon Cart -->
             </div>
             <!-- End Col -->
-            <div class="col-xl-3 col-lg-4 col-sm-6">
+            <div class="col-xl-6 col-lg-4 col-sm-6">
               <div class="icon-card mb-30">
                 <div class="icon success">
                   <i class="lni lni-dollar"></i>
                 </div>
                 <div class="content">
-                  <h6 class="mb-10">Total Income</h6>
-                  <h3 class="text-bold mb-10">$74,567</h3>
-                  <p class="text-sm text-success">
+                  <h6 class="mb-10">Tổng Thu Nhập</h6>
+                  <h3 class="text-bold mb-10"><?=number_format($kq1['tong_thu_nhap'], 0, ',', '.') . " VND"?></h3>
+                  <!-- <p class="text-sm text-success">
                     <i class="lni lni-arrow-up"></i> +5.45%
                     <span class="text-gray">Increased</span>
-                  </p>
+                  </p> -->
                 </div>
               </div>
               <!-- End Icon Cart -->
             </div>
             <!-- End Col -->
-            <div class="col-xl-3 col-lg-4 col-sm-6">
+            <!-- <div class="col-xl-3 col-lg-4 col-sm-6">
               <div class="icon-card mb-30">
                 <div class="icon primary">
                   <i class="lni lni-credit-cards"></i>
@@ -81,8 +101,7 @@
                   </p>
                 </div>
               </div>
-              <!-- End Icon Cart -->
-            </div>
+            </div> -->
             <!-- End Col -->
             <div class="col-xl-3 col-lg-4 col-sm-6">
               <div class="icon-card mb-30">
@@ -90,12 +109,12 @@
                   <i class="lni lni-user"></i>
                 </div>
                 <div class="content">
-                  <h6 class="mb-10">New User</h6>
-                  <h3 class="text-bold mb-10">34567</h3>
-                  <p class="text-sm text-danger">
+                  <h6 class="mb-10">Người Dùng</h6>
+                  <h3 class="text-bold mb-10"><?=$kq2['tong_user']?> Người Dùng</h3>
+                  <!-- <p class="text-sm text-danger">
                     <i class="lni lni-arrow-down"></i> -25.00%
                     <span class="text-gray"> Earning</span>
-                  </p>
+                  </p> -->
                 </div>
               </div>
               <!-- End Icon Cart -->

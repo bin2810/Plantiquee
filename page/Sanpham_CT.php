@@ -242,9 +242,9 @@
                                   <input type="hidden" name="product_name" value="<?=$CT_Product['TenSP']?>">
                                   <input type="hidden" name="quantity" id="quantityInput" value="1">
                                 
-                                  <button class="addToCart" type="submit">Thêm Vào Giõ Hàng</button>
+                                  <button class="addToCart" id="addToCart" type="submit">Thêm Vào Giõ Hàng</button>
                                 </form>
-                                  <button id="addToCart" type="submit">Thêm Vào Giõ Hàng</button>
+                                  <!-- <button id="addToCart" type="submit">Thêm Vào Giõ Hàng</button> -->
                                 </div>
                             </div>
                         </div>

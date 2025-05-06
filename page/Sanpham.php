@@ -20,6 +20,10 @@
                     <div class="shop-product-section">
                         <div class="header-shop-product">Loại Cây</div>
                         <div class="shop-product-content">
+                        <label>
+                        <input type="checkbox" class="LocLoai" value="index.php?act=<?=$madanhmuc?>">
+                        <span class="btn-shop-product"></span>Tất Cả
+                        </label>
                             <?php
                                 foreach ($loaisp as $dmcon) {  
                                     // Kiểm tra xem MADM_con có tồn tại trong URL tham số loc hay không

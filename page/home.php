@@ -13,7 +13,7 @@
         <div class="container-center product hien-ra-dl">
           <div class="product-title">
             <p>Hàng Mới Về</p>
-            <p><a href="">Xem Tất cả</a></p>
+            <p><a href="index.php?act=CT&loc=HMV">Xem Tất cả</a></p>
           </div>
           <div class="product-list">
           <?php
@@ -84,7 +84,7 @@
                   tốt nhất cây xanh tươi để vận chuyển từ nhà kính của chúng tôi
                   đến tận cửa nhà bạn
                 </p>
-                <p class="hide-mobi"><a href="">CÂY TRỒNG</a></p>
+                <p class="hide-mobi"><a href="index.php?act=CT">CÂY TRỒNG</a></p>
               </div>
             </div>
           </div>
@@ -151,7 +151,7 @@
         <div class="container-center product hien-ra-dl">
           <div class="product-title">
             <p>BÁN CHẠY NHẤT</p>
-            <p><a href="">Xem Tất cả</a></p>
+            <p><a href="index.php?act=CT&loc=BCN">Xem Tất cả</a></p>
           </div>
           <div class="product-list">
           <?php
@@ -251,7 +251,7 @@
               <div class="gift-content">
                 <p>Một Món Quà Bền Lâu</p>
                 <p>Plantiquee là món quà hoàn hảo giúp thắp sáng mọi ngôi nhà với vẻ đẹp của thiên nhiên.</p>
-                <p class="hide-mobi"><a href="">Cây Trồng</a></p>
+                <p class="hide-mobi"><a href="index.php?act=QT">Quà Tặng</a></p>
               </div>
             </div>
           </div>
@@ -279,7 +279,7 @@
         <div class="container-center product hien-ra-dl">
           <div class="product-title">
             <p>Quà Tặng</p>
-            <p><a href="">Xem Tất cả</a></p>
+            <p><a href="index.php?act=QT">Xem Tất cả</a></p>
           </div>
           <div class="product-list">
           <?php

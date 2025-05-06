@@ -53,7 +53,12 @@
                                             <td><input class="input-tb" type="password" name="Password" placeholder="Password"></td>
                                         </tr>
                                         <tr>
+                                            <!-- <td><p class="link-signup"><a href="index.php?act=signup">Đăng Ký</a></p></td> -->
+                                            <td><p class="link-signup"><a href="index.php?act=forgotpass">Quên Mật Khẩu</a></p></td>
+                                        </tr>
+                                        <tr>
                                             <td><p class="link-signup"><a href="index.php?act=signup">Đăng Ký</a></p></td>
+                                            <!-- <td><p class="link-signup"><a href="index.php?act=signup">Quên Mật Khẩu</a></p></td> -->
                                         </tr>
                                         <tr>
                                             <td> <button type="submit" name="submit" class="btn-login">ĐĂNG NHẬP</button></td>

@@ -1,5 +1,12 @@
 
 <main>
+<?php
+if (!isset($_SESSION['user']['Username'])) {
+    // Nếu chưa đăng nhập, chuyển về trang login
+    header("Location: index.php?act=login");
+    exit();
+}
+?>
         <div class="container-full bg-dashboard">
             <div class="container-center dashboard">
                 <div class="menu-navigation-bar">
@@ -16,9 +23,9 @@
                 
                     <div class="bangdieukhien">
                             <?php
-                                if($_SESSION['user']['name']){
+                                if(isset($_SESSION['user']['name'])){
                             ?>
-                            <p>Xin chào <?=$_SESSION['user']['name']?></p>
+                                <p>Xin chào <?=$_SESSION['user']['name']?></p>
                             <?php    
                                 }
                             ?>

@@ -5,6 +5,35 @@ $(document).ready(function () {
 });
 
 
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const menu = document.querySelector(".nav-category");
+    const toggleBtn = document.querySelector(".nav-bars");
+
+    // Toggle menu
+    toggleBtn.addEventListener("click", function (e) {
+      menu.classList.toggle("show-nav");
+      e.stopPropagation(); // Ngăn sự kiện lan ra ngoài
+    });
+
+    // Bấm ngoài sẽ đóng
+    document.addEventListener("click", function (e) {
+      if (!menu.contains(e.target) && !toggleBtn.contains(e.target)) {
+        menu.classList.remove("show-nav");
+      }
+    });
+
+    // Ngăn không đóng khi click bên trong menu
+    menu.addEventListener("click", function (e) {
+      e.stopPropagation();
+    });
+  });
+
+
+
+
+
 // cart
 function toggleCart() {
     var cart = $("#cartSidebar");
@@ -85,3 +114,30 @@ function validateEmail() {
     }
     return true;
 }
+
+
+
+
+
+// gift
+  const amountButtons = document.querySelectorAll('.amount-btn');
+  amountButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      amountButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  const designImgs = document.querySelectorAll('.design-img');
+  const previewImg = document.getElementById('preview-img'); // Hình to bên phải
+
+  designImgs.forEach(img => {
+    img.addEventListener('click', () => {
+      designImgs.forEach(i => i.classList.remove('active'));
+      img.classList.add('active');
+
+      // Cập nhật hình lớn bên phải
+      previewImg.src = img.src;
+    });
+  });
+

@@ -27,12 +27,12 @@
 <main>
 <div class="order-detail-container">
     <h2>Chi tiết đơn hàng #<?= $donhang['DonHang_id'] ?></h2>
-    <p><strong>Ngày tạo:</strong> <?= $donhang['NgayTao'] ?></p>
+    <p><strong>Ngày tạo:</strong> <?= date("d/m/Y H:i:s", strtotime($donhang['NgayTao'])); ?></p>
     <p><strong>Trạng thái:</strong> <?= $donhang['TrangThai'] ?? "Đang xử lý" ?></p>
 
     <div class="product-list">
     <?php 
-    $tong = 0; // ✅ Reset tổng tiền mỗi lần render đơn hàng
+    $tong = 0; 
     foreach ($ct_list as $sp): 
         $thanhtien = $sp->SoLuong * $sp->DonGia;
         $tong += $thanhtien;

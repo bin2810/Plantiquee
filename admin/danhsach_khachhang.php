@@ -1,80 +1,128 @@
 <?php
   include_once('header.php');
-  include_once '../include/database.php';
-  $sql = "SELECT * FROM tb_khachhang ";
+  include_once('../include/database.php');
+  $sql = "SELECT * FROM tb_khachhang";
   $stmt = $conn->prepare($sql);
   $stmt->execute();
-  $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $danhsach = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+  // phân trang
+  $sl_page = 6;
+  $tong_product = count($danhsach);
+
+  $tong_page = ceil($tong_product/$sl_page);
+
+  $page_show = min($tong_page , max(1 , isset($_GET['page']) ? $_GET['page'] : 1));
+
+  $vtbd = ($page_show - 1) * $sl_page;
+
+  $sql .= " limit ".$vtbd.",".$sl_page;
+
+  $stmt = $conn->prepare($sql);
+  $stmt->execute();
+  $danhsach = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-      <section class="card-components">
+      <!-- ========== header start ========== -->
+      <!-- ========== header end ========== -->
+
+      <!-- ========== tab components start ========== -->
+      <section class="tab-components">
         <div class="container-fluid">
           <!-- ========== title-wrapper start ========== -->
           <div class="title-wrapper pt-30">
             <div class="row align-items-center">
               <div class="col-md-6">
                 <div class="title">
-                  <h2>Cards</h2>
+                  <h2>Danh Sách Khách Hàng</h2>
                 </div>
               </div>
               <!-- end col -->
-              <div class="col-md-6">
-                <div class="breadcrumb-wrapper">
-                  <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                      <li class="breadcrumb-item">
-                        <a href="#0">Dashboard</a>
-                      </li>
-                      <li class="breadcrumb-item">
-                        <a href="#0">UI Components</a>
-                      </li>
-                      <li class="breadcrumb-item active" aria-current="page">
-                        Cards
-                      </li>
-                    </ol>
-                  </nav>
+              
+            </div>
+          </div>
+            <div class="form-elements-wrapper">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="card-style mb-30">
+                  <div class="table-wrapper table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th class="lead-info">
+                            <h6>STT</h6>
+                          </th>
+                          <th class="lead-info">
+                            <h6>Họ Và Tên</h6>
+                          </th>
+                          <th class="lead-info">
+                            <h6>Email</h6>
+                          </th>
+                          <th class="lead-info">
+                            <h6>Số Điện Thoại</h6>
+                          </th>
+                          <th class="lead-info">
+                            <h6>Địa Chỉ</h6>
+                          </th>
+                        </tr>
+                        <!-- end table row-->
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <?php
+                            $i = $vtbd+1;
+                            foreach ($danhsach as $khachhang) {
+                          ?>
+                          <td class="min-width">  
+                              <p><?=$i++?></p>
+                          </td>
+                          
+                          <td class="min-width">  
+                            <p><?=$khachhang['HoTen']?></p>
+                          </td>
+                          <td class="min-width">
+                            <p><?=$khachhang['Email']?></p>
+                          </td>
+                          <td class="min-width">
+                            <p><?=$khachhang['SĐT']?></p>
+                          </td>
+                          <td class="min-width">
+                            <p><?=$khachhang['DiaChi']?></p>
+                          </td>
+                          
+                        </tr>
+                       <?php
+                          }
+                        ?>
+                      </tbody>
+                      
+                    </table>
+                    <div class="phantrang">
+                        <?php
+                        if(isset($tong_page)){
+                            for($so = 1; $so <= $tong_page; $so++){
+                                if($so != $page_show){
+                        ?>
+                                    <a href="?page=<?=$so?>"><?=$so?></a>
+                        <?php
+                                }else{
+                        ?>
+                                <span><?=$so?></span>
+                        <?php
+                                }
+                            }
+                        }
+                        ?>
+                </div>
+                  </div>
                 </div>
               </div>
-              <!-- end col -->
+              <!-- end row -->
             </div>
-            <!-- end row -->
-          </div>
-          <!-- ========== title-wrapper end ========== -->
-
-          <!-- ========== cards-styles start ========== -->
-          <div class="cards-styles">
-            
-
-            <!-- ========= card-style-4 start ========= -->
-            <div class="row">
-              <?php
-                foreach($users as $user){
-              ?>
-              <div class="col-xl-4 col-lg-4 col-md-6">
-                <div class="card-style-4 mb-30">
-                  <div class="card-image">
-                  
-                  </div>
-                  <div class="card-content">
-                    <h4 style="text-align: center;"><?=$user['HoTen']?></h4>
-                    <p style="padding: 10px 0;">Họ Và Tên: <span style="color:#224229;font-weight:bold"><?=$user['HoTen']?></span></p>
-                    <p style="padding: 10px 0;">Email: <span style="color:#224229;font-weight:bold"><?=$user['Email']?></span></p>
-                    <a href="danhsach_user_delete.php?id=<?=$user['KhachHang_id']?>'" class="main-btn" style="color:brown;font-weight:bold; font-size:15px" >Xoá</a>
-                    <a href="danhsach_user_update.php?id=<?=$user['KhachHang_id']?>" class="main-btn " style="color:green;font-weight:bold; font-size:15px;margin-left:15px">Sửa</a>
-                  </div>
-                </div>
-              </div>
-              <?php
-                }
-              ?>
-            </div>
-            
-           
-            
-          </div>
-          <!-- ========== cards-styles end ========== -->
+          
         </div>
         <!-- end container -->
       </section>
+      <!-- ========== tab components end ========== -->
 <?php
-  include('footer.php')
+  include_once('footer.php');
 ?>

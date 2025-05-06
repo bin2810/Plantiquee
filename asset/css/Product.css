@@ -183,3 +183,87 @@
   }
   
   
+
+/* Responsive - Tối ưu chuẩn */
+@media (max-width: 1200px) {
+  .shop-product {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .shop-product-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .title_shop-product {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .title_shop-product_h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .title_shop-product_h2 {
+    font-size: 2.5rem;
+  }
+
+  .shop-product-list {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .shop-btnaddcart {
+    font-size: 1.3rem;
+    padding: 0.7rem;
+    width: 85%;
+  }
+
+  .discount::before {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .phantrang {
+    text-align: center;
+  }
+
+  .phantrang a,
+  .phantrang span {
+    font-size: 1.3rem;
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .title_shop-product_h2 {
+    font-size: 2rem;
+  }
+
+  .shop-btnaddcart {
+    font-size: 1.2rem;
+    padding: 0.6rem;
+    width: 80%;
+  }
+
+  .discount::before {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .phantrang a,
+  .phantrang span {
+    font-size: 1.2rem;
+    padding: 6px 8px;
+  }
+  .shop-product-item-col-img{
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 1rem;
+
+}
+}
