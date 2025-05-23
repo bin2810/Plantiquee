@@ -64,6 +64,18 @@ main{
   margin: 0;
   color: #ffffff;
 }
+.thong-bao-gio-hang-trong {
+  text-align: center;
+  padding: 20px;
+  margin: 150px auto;
+  font-size: 20px;
+  color: var(--PalePink-color);
+  border-radius: 8px;
+  width: fit-content;
+  width: 100%;
+  line-height: 5rem;
+}
+
 
 .close-cart {
   background: none;
@@ -294,6 +306,7 @@ main{
   padding: 24px;
   background: white;
   color: var(--green-color);
+  height: 400px;
 }
 
 .chat-body p {
@@ -302,6 +315,66 @@ main{
   font-weight: 500;
   text-align: center;
 }
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px 0;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px 0;
+  height: 350px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color:  var(--green-color) #f0f0f0;
+}
+
+
+.message {
+  display: flex;
+  width: 100%;
+}
+
+.user-msg {
+  justify-content: flex-end;
+}
+
+.bot-msg {
+  justify-content: flex-start;
+}
+
+.bubble {
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 16px;
+  word-wrap: break-word;
+  font-size: 14px;
+  line-height: 1.4;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.user-msg .bubble {
+  background-color: #dcf8c6;
+  color: #222;
+  border-top-right-radius: 0;
+  text-align: right;
+}
+
+.bot-msg .bubble {
+  background-color: #f1f0f0;
+  color: #222;
+  border-top-left-radius: 0;
+}
+
 
 .chat-options {
   display: flex;
@@ -328,12 +401,51 @@ main{
 
 /* ==== FOOTER ==== */
 .chat-footer {
+  width: 100%;
+  position: absolute;
   padding: 16px;
-  background: var(--gray);
-  font-size: 13px;
-  text-align: center;
-  color: #666;
+  background: #f8f8f8;
+  border-top: 1px solid #ddd;
+  bottom: 0;
+  left: 0;
 }
+
+#chat-form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#chat-form input[type="text"] {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+#chat-form input[type="text"]:focus {
+  border-color: var(--green-color);
+  box-shadow: 0 0 0 2px rgba(0, 128, 0, 0.1);
+}
+
+#chat-form button {
+  background: var(--green-color);
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#chat-form button:hover {
+  background: #276d3b; /* darker green */
+}
+
 
 
 
@@ -444,6 +556,7 @@ main{
 
 .nav-login img {
   width: 3rem;
+  cursor: pointer;
 }
 
 .nav-cart{
@@ -893,6 +1006,7 @@ main{
   font-weight: bold;
   border: 0rem  solid var(--green-color);
   transition: background 0.5s ease-in-out;
+  cursor: pointer;
 }
 .chat-user-content button:hover{
   color: var(--PalePink-color);
@@ -995,7 +1109,7 @@ main{
 
 .search_product_mains{
   position: fixed;
-  top: 12%;
+  top: 16%;
   z-index: 999999;
   background-color: var(--bgnav-color);
   display: flex;

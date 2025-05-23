@@ -32,14 +32,13 @@
             <div class="cart-sidebar-header">
               <h2>Giỏ hàng của bạn</h2>
               <button class="close-cart" onclick="toggleCart()">✖</button>
-              
             </div>
             <div class='cart-item'>
               <?php
                 $total_quantity = 0;
                 $total_price = 0;
                 if (empty($_SESSION['cart']) || !is_array($_SESSION['cart'])) {
-                  echo "🛒 Giỏ hàng trống.";
+                  echo '<div class="thong-bao-gio-hang-trong">🛒 Giỏ hàng trống.</div>';
                 } else {
                   
                     foreach ($_SESSION['cart'] as $item) {
@@ -203,7 +202,7 @@
           
           <div class="container-full">
               <div class="container-center">
-                  <section class="gioi-thieu">
+                  <section class="gioi-thieu hien-ra-dl">
                       <div class="container_one">
                           <div class="cot-trai">
                           <!-- trống  -->
@@ -221,7 +220,7 @@
 
           <div class="container-full">
               <div class="container-center">
-                  <section class="gioi-thieu">
+                  <section class="gioi-thieu hien-ra-dl">
                       <div class="container_two">
                           <div class="cot-trai">
                               <img src="../asset/img/about1.jpg" alt="Ảnh 1" class="anh">
@@ -239,7 +238,7 @@
 
           <div class="container-full">
               <div class="container-center">
-                  <section class="gioi-thieu">
+                  <section class="gioi-thieu hien-ra-dl">
                       <div class="container_two">
                           <div class="cot-trai_three">
                               <img src="../asset/img/about2.png" alt="Ảnh 2" class="anh">
@@ -255,7 +254,7 @@
 
           <div class="container-full">
               <div class="container-center">
-                  <section class="gioi-thieu">
+                  <section class="gioi-thieu hien-ra-dl">
                       <div class="container_two">
                           <div class="cot-trai">
                               <img src="../asset/img/about3.jpg" alt="Ảnh 2" class="anh">
@@ -272,7 +271,7 @@
 
           <div class="container-full">
               <div class="container-center">
-                  <section class="gioi-thieu">
+                  <section class="gioi-thieu hien-ra-dl">
                       <div class="container_two">
                           <div class="cot-trai_three">
                               <img src="../asset/img/about4.png" alt="Ảnh 2" class="anh">
@@ -286,17 +285,6 @@
               </div>
           </div>
       </main>
-
-
-
-
-
-
-
-
-
-   
-
 
         <div class="main_chat hiden-tab-mobi" id="nutP">
           <button id="chat-btn"><div class="chat_bubble"><img src="../asset/img/logo-tab.png" alt=""></div></button>

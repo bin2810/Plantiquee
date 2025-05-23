@@ -19,7 +19,9 @@
 .dashboard-content{
     padding: 2rem;
 }
-
+.menu-navigation-list a{
+    
+}
 .menu-navigation-item{
     padding: 0.8rem 0;
     border-bottom: 2px solid var(--green-color);
@@ -217,61 +219,84 @@
 
 
 
-
-
 .order-detail-container {
-    max-width: 1000px;
-    margin: 200px  auto 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    /* max-width: 1200px; */
+    margin: 120px auto 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .order-detail-container h2 {
-    margin-bottom: 10px;
-    color: #2c3e50;
+    margin-bottom: 20px;
+    color: var(--green-color);
+    font-size: 28px;
+    border-bottom: 2px solid #eee;
+    padding: 10px 0 10px 0;
 }
 
 .order-detail-container p {
-    margin: 4px 0;
+    margin: 6px 0;
     color: #555;
+    font-size: 16px;
+    padding: 10px 0 10px 0;
+
 }
 
-.product-list {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.product-list-dashbo {
+    margin-top: 30px;
+    display: grid;
+    /* flex-direction: column; */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    
 }
 
 .product-card {
     display: flex;
     gap: 20px;
-    background: #f9f9f9;
-    padding: 15px;
-    border-radius: 12px;
+    background: #f5f7fa;
+    padding: 20px;
+    border-radius: 14px;
     align-items: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-2px);
 }
 
 .product-card img {
     width: 100px;
     height: 100px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.product-info {
+    flex: 1;
 }
 
 .product-info h3 {
-    margin-bottom: 6px;
-    font-size: 18px;
+    margin: 0 0 8px 0;
+    font-size: 20px;
     color: #333;
+}
+
+.product-info p {
+    font-size: 15px;
+    color: #666;
 }
 
 .total-section {
     text-align: right;
-    margin-top: 20px;
-    font-size: 20px;
+    margin-top: 30px;
+    font-size: 22px;
     font-weight: bold;
     color: #27ae60;
+    border-top: 2px solid #eee;
+    padding-top: 15px;
 }

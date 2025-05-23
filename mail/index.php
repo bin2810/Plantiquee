@@ -20,7 +20,7 @@ class Mailer{
 
         try {
             //Server settings
-            $mail->SMTPDebug = 2;// SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+            // $mail->SMTPDebug = 2;// SMTP::DEBUG_SERVER;                      //Enable verbose debug output
             $mail->isSMTP(); 
             $mail-> CharSet = "utf-8";                                //Send using SMTP
             $mail->Host       = 'plantiquee.id.vn';                     //Set the SMTP server to send through

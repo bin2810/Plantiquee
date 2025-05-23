@@ -58,3 +58,35 @@
     color: #4b6e3f;
   }
   
+
+
+  .hochoi_CT{
+    width:1000px;
+    line-height: 5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hochoi_CT h1{
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: bold;
+    color: var(--green-color);
+    margin-bottom: 2rem;
+  }
+
+  .hinhanh_tieude_tintuc{
+    width: 600px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hinh_tintuc{
+   width: 400px;
+  }
+  .section p{
+   font-size: 1.4rem;
+   text-align: justify;
+  }

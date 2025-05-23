@@ -1,7 +1,12 @@
 <main>
         <div class="container-full banner">
           <div class="banner-img">
-            <img src="asset/img/banerr.png" alt="" />
+            <!-- <img src="asset/img/banerr.png" alt="" /> -->
+            <video autoplay loop muted playsinline>
+                <source
+                  src="asset/media/bloomscape-selfwatering-hero.mp4"
+                />
+              </video>
             <div class="baner-img-content">
               <p>THÊM CÂY XANH THÊM BÌNH YÊN</p>
               <p>MỘT CHẬU CÂY NHỎ CÓ THỂ THAY ĐỔI MOOD CỦA BẠN</p>
@@ -9,7 +14,6 @@
             </div>
           </div>
         </div>
-
         <div class="container-center product hien-ra-dl">
           <div class="product-title">
             <p>Hàng Mới Về</p>

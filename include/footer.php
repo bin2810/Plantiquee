@@ -1,28 +1,33 @@
         
 
-
+        <!-- chat  -->
         <div class="main_chat hiden-tab-mobi" id="nutP">
           <button id="chat-btn"><div class="chat_bubble"><img src="asset/img/logo-tab.png" alt=""></div></button>
         </div>
+
+        
         <div id="chat-widget" class="chat-widget">
           <div class="chat-header">
               <span class="brand">Plantiquee</span>
-              
               <button id="close-chat" class="close-chat">✖</button>
           </div>
           <div class="chat-body">
-              <p>Xin Chào 👋🌱</p>
+              <!-- <p>Xin Chào 👋🌱</p> -->
+              <div class="messages">
+                
+              </div>
               <div class="chat-options">
-                <button>Gửi tin nhắn cho chúng tôi</button>
-                <button>Kiểm tra trạng thái đơn hàng</button>
-                <button>Hướng dẫn & Hỗ trợ chăm sóc cây</button>
+                
               </div>
           </div>
           <div class="chat-footer">
-              
+              <form id="chat-form">
+                <input type="text" id="question" placeholder="Nhập câu hỏi..." required>
+                <button type="submit">Gửi</button>
+            </form>
           </div>
         </div>
-
+        <!-- tìm kiếm  -->
         <div class="container-full search_product_mains" id="box_search">
           <div class="search_product_main">
             <h1>Tìm Kiếm Sản Phẩm Yêu Thích Của Bạn</h1>
@@ -35,6 +40,7 @@
         <div class="container-full bg-footer">
           <div class="container-center footer">
             <div class="footer-img">
+              <!-- <img style="width:200px; display:flex; justify-content:center" src="asset/img/LOGO-HOTEC-green.png" width="15px" alt=""> -->
               <img src="asset/img/logo-footer.png" alt="">
             </div>
             <div class="footer-content">
@@ -78,6 +84,7 @@
             </div>
           </div>
         </div>
+        
       </footer>
    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -86,6 +93,7 @@
     <script src="asset/js/animation.js"></script>
     <script src="asset/js/search.js"></script>
     <script src="asset/js/so_luong_product.js"></script>
+    <script src="asset/js/chat.js"></script>
    </div>
   </body>
 </html>

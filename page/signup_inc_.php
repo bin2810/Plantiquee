@@ -18,6 +18,10 @@
                 header('location: ../index.php?act=signup&error=kt_kytu_user');
                 exit();
             }
+            if(!preg_match('/^[a-zA-Z0-9_]+$/', $newusername)){
+                header('location: ../index.php?act=signup&error=kt_user_ki_tu_dac_biet');
+                exit();
+            }
             if(strlen($password) < 4 || strlen($password) > 50){
                 header('location: ../index.php?act=signup&error=kt_kytu_pass');
                 exit();

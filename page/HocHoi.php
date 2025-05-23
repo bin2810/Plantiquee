@@ -40,7 +40,7 @@
                 $total_quantity = 0;
                 $total_price = 0;
                 if (empty($_SESSION['cart']) || !is_array($_SESSION['cart'])) {
-                  echo "🛒 Giỏ hàng trống.";
+                  echo '<div class="thong-bao-gio-hang-trong">🛒 Giỏ hàng trống.</div>';
                 } else {
                   
                     foreach ($_SESSION['cart'] as $item) {
@@ -204,11 +204,12 @@
             <section class="blog-grid">
             <?php
               foreach ($tintuc as $tt) {
+              $hinhanh = explode(',', $tt['Hinh_Anh']);
               
             ?>
-            <a href="">
+            <a href="HocHoi_CT.php?id=<?=$tt['Tintuc_id']?>">
               <div class="blog-item">
-                <img src="../asset/img/tintuc/<?=$tt['Hinh_Anh']?>" alt="Thumbnail">
+                <img src="../asset/img/tintuc/<?=$hinhanh[0]?>" alt="">
                 <p class="category"><?=$tt['Tieu_De']?></p>
               </div>
             </a>
@@ -275,7 +276,7 @@
             <div class="footer-content">
               <div class="footer-col">
                 <p>Về Chúng Tôi</p>
-                <a href="">Giới Thiệu</a>
+                <a href="about.php">Giới Thiệu</a>
                 <a href="">Tuyển Dụng</a>
                 <a href="">Đánh Giá</a>
                 <a href="HocHoi.php">Học Hỏi</a>

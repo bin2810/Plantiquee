@@ -93,8 +93,8 @@
                     <div class="select-style-1">
                       <div class="select-position">
                         <select name="trangthai">
-                          <option value="New">New</option>
                           <option value="none">none</option>
+                          <option value="New">New</option>
                           <option value="Discount10">Discount10</option>
                           <option value="Discount20">Discount20</option>
                           <option value="Discount30">Discount30</option>

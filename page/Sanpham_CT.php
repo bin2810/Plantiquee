@@ -51,7 +51,7 @@
                 $total_quantity = 0;
                 $total_price = 0;
                 if (empty($_SESSION['cart']) || !is_array($_SESSION['cart'])) {
-                  echo "🛒 Giỏ hàng trống.";
+                  echo '<div class="thong-bao-gio-hang-trong">🛒 Giỏ hàng trống.</div>';
                 } else {
                   
                     foreach ($_SESSION['cart'] as $item) {
@@ -292,7 +292,7 @@
         <div class="container-center product">
           <div class="product-title">
             <p>Có Thể Bạn Sẽ Thích</p>
-            <p><a href="">Xem Tất cả</a></p>
+            <!-- <p><a href="">Xem Tất cả</a></p> -->
           </div>
           <div class="product-list">
           <?php

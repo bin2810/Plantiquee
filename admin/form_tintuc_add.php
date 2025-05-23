@@ -50,7 +50,7 @@
                     </div>
                     <div class="input-style-1">
                       <label>Hình Sản Phẩm</label>
-                        <input type="file" name="hinh_sp"/>
+                        <input type="file" name="hinh_sp[]" multiple required/>
                       </div>
                   </div>
                 </div>

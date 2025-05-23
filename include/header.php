@@ -21,7 +21,13 @@
                 $total_quantity = 0;
                 $total_price = 0;
                 if (empty($_SESSION['cart']) || !is_array($_SESSION['cart'])) {
-                  echo "🛒 Giỏ hàng trống.";
+                  echo '
+                  <div class="thong-bao-gio-hang-trong">
+                   <img src="asset/img/giohang.png" alt=""><br>
+                   Giõ Hàng Của Bạn Đang Trống
+                  </div>
+                  ';
+                  
                 } else {
                   
                     foreach ($_SESSION['cart'] as $item) {
@@ -45,7 +51,7 @@
                               <input type="hidden" name="product_id" value="<?=$id?>">
                               <button type="submit">Xóa</button>
                             </form>
-                            <!-- <a href="include/clear_cart.php">xóa</a> -->
+                           
                           </div>
                         </div>
                         
@@ -83,6 +89,7 @@
       <header>
         <div class="container-full poromo-banner">
           <p>Welcome to Plantiquee</p>
+          <!-- <p>TRƯỜNG CAO ĐẲNG KÍNH TẾ KỸ THUẬT TPHCM</p> -->
         </div>
         <div class="container-full navbar">
           <div class="container-center nav">
@@ -98,11 +105,11 @@
                   SEARCH
                   <i class="fa-solid fa-magnifying-glass"></i>
                 </span> -->
-                <div class="dropdown">
+                <!-- <div class="dropdown">
                   <div class="container-center dropdown-container">
                     <input type="text" name="" id="" />
                   </div>
-                </div>
+                </div> -->
               </div>
               <?php
               foreach ($danhmuc as $dm_cha) {

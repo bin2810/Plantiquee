@@ -21,8 +21,8 @@ if (!isset($_SESSION['user']['Username'])) {
                 </div>
                 <div class="dashboard-content">
                 <div class="phieugiamgia">
-    <p><a href="">Đi đến đơn hàng</a>Bạn chưa có đơn nào thực hiện</p>
-</div>
+                    <p><a href="index.php?act=TQT">Đi đến thẻ quà tặng</a>Bạn chưa có đơn nào thực hiện</p>
+                </div>
                     
                 </div>
             </div>

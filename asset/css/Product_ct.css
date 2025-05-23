@@ -181,3 +181,113 @@
 .product_mota_right_content img{
   width: 100%;
 }
+
+
+
+
+/* Mobile First Approach */
+
+/* Dưới 768px: Điện thoại */
+@media (max-width: 768px) {
+  .product_ct {
+    flex-direction: column;
+    padding: 3rem 1rem;
+    row-gap: 3rem;
+  }
+
+  .product_ct_left,
+  .product_ct_right {
+    flex: 100% 0 0;
+    padding: 2rem 0;
+  }
+
+  .product_ct_right_header {
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .product_ct_right_header p:nth-child(1) {
+    font-size: 2.5rem;
+  }
+
+  .product_ct_right_header p:nth-child(2) {
+    font-size: 1.8rem;
+  }
+
+  .product_ct_right_addtocart {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .product_mota {
+    flex-direction: column;
+    row-gap: 3rem;
+    padding: 3rem 1rem;
+  }
+
+  .product_mota_left,
+  .product_mota_right {
+    flex: 100% 0 0;
+    padding: 2rem 0;
+  }
+
+  .product_mota__header p:nth-child(1),
+  .product_mota__header p:nth-child(4),
+  .product_mota__header p:nth-child(6) {
+    font-size: 1.9rem;
+  }
+
+  .product_mota__header p:nth-child(2),
+  .product_mota__header p:nth-child(5),
+  .product_mota__header p:nth-child(7) {
+    font-size: 1.5rem;
+  }
+
+  .btn_addcart {
+    font-size: 2rem;
+  }
+
+  #addToCart {
+    padding: 1.5rem 3rem;
+    font-size: 1.8rem;
+  }
+
+  #soluong {
+    font-size: 1.6rem;
+  }
+}
+
+/* Từ 768px đến 1024px: Máy tính bảng */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .product_ct {
+    column-gap: 3rem;
+    padding: 4rem 2rem;
+  }
+
+  .product_ct_left,
+  .product_ct_right {
+    flex: 45% 0 0;
+    padding: 3rem 0;
+  }
+
+  .product_mota {
+    column-gap: 3rem;
+    padding: 4rem 2rem;
+  }
+
+  .product_mota_left,
+  .product_mota_right {
+    flex: 50% 0 0;
+    padding: 3rem 0;
+  }
+
+  .btn_addcart {
+    font-size: 2.2rem;
+  }
+
+  #addToCart {
+    padding: 1.8rem 3.5rem;
+    font-size: 2rem;
+  }
+}

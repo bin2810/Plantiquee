@@ -10,6 +10,9 @@
                     case 'kt_kytu_user':
                         $error_message = "Username 4 ký tự trở lên!";
                         break;
+                    case 'kt_user_ki_tu_dac_biet':
+                        $error_message = "Username ko được có dấu và khoản cách!";
+                        break;
                     case 'kt_kytu_pass':
                         $error_message = "Password 4 ký tự trở lên!";
                         break;

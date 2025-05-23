@@ -1,5 +1,5 @@
 <?php
-// session_start();
+session_start();
 if (isset($_POST['update_sp'])) {
     include_once('../include/database.php');
 

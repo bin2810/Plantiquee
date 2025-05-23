@@ -48,24 +48,19 @@
               <div class="col-xl-4 col-lg-4 col-md-6">
                 <div class="card-style-4 mb-30">
                   <div class="card-image" style="border-radius: 0;">
-                  <?php
-                    if($user['Hinh_Anh'] == null){
-                  ?>
-                    <img src="assets/images/avata_md_admin.jpg" alt="" />
-                  <?php
-                    }else{
-                  ?>
-                    <img src="../asset/img/tintuc/<?=$user['Hinh_Anh']?>" width="100%" height="200px" alt="" />
-                  <?php
-                    }
-                  ?>
+                    <?php
+                      $hinhanh = explode(',', $user['Hinh_Anh']);
+                    ?>
+                  
+                  <img src="../asset/img/tintuc/<?=$hinhanh[0]?>" width="100%" height="200px" alt="" />
+                  
                   </div>
                   <div class="card-content">
                     <h4 style="text-align: center; font-size: 15px; height:50px;"><?=$user['Tieu_De']?></h4>
                     <div class="btn_cs"  style="margin-top: 15px;display: flex;justify-content: center;">
                       <a href="danhsach_tintuc_delete.php?id=<?=$user['Tintuc_id']?>'" class="main-btn" style="color:brown;font-weight:bold; font-size:15px" >Xoá</a>
                       
-                      <a href="danhsach_user_update.php?id=<?=$user['Tintuc_id']?>" class="main-btn " style="color:green;font-weight:bold; font-size:15px;">Sửa</a>
+                      <a href="danhsach_tintuc_update.php?id=<?=$user['Tintuc_id']?>" class="main-btn " style="color:green;font-weight:bold; font-size:15px;">Sửa</a>
                     </div>
                   </div>
                 </div>

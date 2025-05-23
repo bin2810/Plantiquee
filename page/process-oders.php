@@ -1,5 +1,7 @@
 <?php
+ob_start();
 session_start();
+
 if (isset($_POST['submit-checkout'])) {
     require_once('../include/database.php');
 
@@ -16,9 +18,9 @@ if (isset($_POST['submit-checkout'])) {
         $total_price += $item['product_price'] * $item['quantity'];
     }
 
-    // 1. Kiểm tra khách hàng đã có chưa (dựa vào Ma_user)
-    $checkQuery = $conn->prepare("SELECT KhachHang_id FROM tb_khachhang WHERE Ma_user = :mauser");
-    $checkQuery->bindParam(':mauser', $id_user);
+    // 1. Kiểm tra khách hàng đã có chưa (dựa vào HoTenkh)
+    $checkQuery = $conn->prepare("SELECT KhachHang_id,HoTen FROM tb_khachhang WHERE HoTen = :HoTen");
+    $checkQuery->bindParam(':HoTen', $name_kh);
     $checkQuery->execute();
     $existingKh = $checkQuery->fetch(PDO::FETCH_ASSOC);
 
@@ -64,6 +66,60 @@ if (isset($_POST['submit-checkout'])) {
         $query->bindParam(':masp', $item['product_id']);
         $query->execute();
     }
+
+
+        // 4. Gửi email xác nhận đơn hàng
+        require_once('../mail/index.php'); 
+        $mail = new Mailer();
+        $title = "Xác nhận đơn hàng thành công - Plantiquee";
+    
+        $productList = '';
+        foreach ($cart as $item) {
+            $productList .= '
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #ddd;">' . $item['product_name'] . '</td>
+                    <td style="padding: 8px; border: 1px solid #ddd;">' . $item['quantity'] . '</td>
+                    <td style="padding: 8px; border: 1px solid #ddd;">' . number_format($item['product_price'], 0, ',', '.') . 'đ</td>
+                </tr>
+            ';
+        }
+    
+        $content = '
+        <div style="max-width: 600px; margin: auto; font-family: Arial, sans-serif; border: 1px solid #ddd; padding: 20px; border-radius: 8px;">
+            <h2 style="color: #2b8a3e; text-align: center;">🛒 Đơn hàng #' . $donhang_id . ' đã được xác nhận!</h2>
+            <p>Xin chào <strong>' . $name_kh . '</strong>,</p>
+            <p>Chúng tôi đã nhận được đơn hàng của bạn và sẽ xử lý sớm nhất.</p>
+    
+            <h3>📦 Chi tiết đơn hàng:</h3>
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th style="padding: 8px; border: 1px solid #ddd;">Sản phẩm</th>
+                        <th style="padding: 8px; border: 1px solid #ddd;">Số lượng</th>
+                        <th style="padding: 8px; border: 1px solid #ddd;">Giá</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ' . $productList . '
+                </tbody>
+            </table>
+    
+            <p style="margin-top: 15px;"><strong>Tổng tiền:</strong> ' . number_format($total_price, 0, ',', '.') . 'đ</p>
+    
+            <h3>🏠 Thông tin giao hàng:</h3>
+            <p>
+                ' . nl2br($address_kh) . '<br>
+                SĐT: ' . $sdt_kh . '
+            </p>
+    
+            <hr style="margin: 20px 0;">
+            <p style="font-size: 13px; color: #777;">Nếu bạn có bất kỳ câu hỏi nào, hãy phản hồi email này hoặc liên hệ với chúng tôi qua website.</p>
+            <p style="font-size: 13px; color: #777;">Trân trọng,<br>Đội ngũ Plantiquee</p>
+        </div>';
+    
+        $mail->sendMail($title, $content, $email_kh);
+    
+
 
     unset($_SESSION['cart']);
     header("location: thankyou.php?madon=$donhang_id");

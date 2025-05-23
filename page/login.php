@@ -44,7 +44,7 @@
                                         </div>
                                        
                                         <tr>
-                                            <td><input class="input-tb" type="text" name="Username" placeholder="Username"></td>
+                                            <td><input class="input-tb" type="text" name="Username" placeholder="Username / Email"></td>
                                         </tr>
                                         <tr>
                                             <td><p class="title-tb">MẬT KHẨU:</p></td>

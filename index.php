@@ -23,7 +23,7 @@ $mail = new Mailer();
     <link rel="stylesheet" href="asset/css/error_page.css"/>
     <link rel="stylesheet" href="asset/css/responsive.css" />
     
-    <?php 
+<?php 
   $page = isset($_GET['act']) ? $_GET['act'] : 'home'; 
 
   switch ($page) {
@@ -76,6 +76,9 @@ $mail = new Mailer();
       break;
     case 'chitietdonhang':
       $title = 'Chi Tiết Đơn Hàng';
+      break;
+    case 'timkim':
+      $title = 'Tìm Kiếm Sản Phẩm';
       break;
     default:
       $title = 'Lỗi 404';
@@ -156,6 +159,9 @@ include_once('include/header.php');
                 break;
             case 'about':
                 include 'page/about.php';
+                break;
+            case 'timkim':
+                include 'page/Timkiem.php';
                 break;
             default:
                 include 'page/error_page.php';
