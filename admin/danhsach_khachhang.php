@@ -1,26 +1,35 @@
 <?php
   include_once('header.php');
   include_once('../include/database.php');
-  $sql = "SELECT * FROM tb_khachhang";
-  $stmt = $conn->prepare($sql);
-  $stmt->execute();
-  $danhsach = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $sl_page = 5;
+  $sql_count = "SELECT COUNT(*) FROM tb_khachhang";
+  $stmt_count = $conn->prepare($sql_count);
+  $stmt_count->execute();
+  $tong_product = $stmt_count->fetchColumn();
+  $tong_page = ceil($tong_product / $sl_page);
 
-  // phân trang
-  $sl_page = 6;
-  $tong_product = count($danhsach);
-
-  $tong_page = ceil($tong_product/$sl_page);
 
   $page_show = min($tong_page , max(1 , isset($_GET['page']) ? $_GET['page'] : 1));
 
   $vtbd = ($page_show - 1) * $sl_page;
 
-  $sql .= " limit ".$vtbd.",".$sl_page;
+  $sql = "SELECT 
+            kh.KhachHang_id,
+            kh.HoTen,
+            kh.Email,
+            kh.SĐT,
+            kh.DiaChi,
+            COALESCE(SUM(ct.SoLuong * ct.DonGia), 0) AS TongTienMua
+        FROM tb_khachhang kh
+        LEFT JOIN tb_donhang dh ON kh.KhachHang_id = dh.MaKhachHang
+        LEFT JOIN tb_ctdonhang ct ON dh.DonHang_id = ct.MaDH
+        GROUP BY kh.KhachHang_id
+        LIMIT $vtbd, $sl_page";
 
-  $stmt = $conn->prepare($sql);
-  $stmt->execute();
-  $danhsach = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$danhsach = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
       <!-- ========== header start ========== -->
       <!-- ========== header end ========== -->
@@ -63,6 +72,9 @@
                           <th class="lead-info">
                             <h6>Địa Chỉ</h6>
                           </th>
+                          <th class="lead-info">
+                            <h6>Tổng Tiền</h6>
+                          </th>
                         </tr>
                         <!-- end table row-->
                       </thead>
@@ -87,6 +99,9 @@
                           </td>
                           <td class="min-width">
                             <p><?=$khachhang['DiaChi']?></p>
+                          </td>
+                          <td class="min-width">
+                             <p><?=number_format($khachhang['TongTienMua'], 0, ',', '.')?> đ</p>
                           </td>
                           
                         </tr>

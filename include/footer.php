@@ -52,22 +52,19 @@
                 <a href="page/HocHoi.php">Học Hỏi</a>
                 <a href="">Cam Kết Của Chúng Tôi</a>
                 <a href="">Quà Tặng Doanh Nghiệp</a>
-                <a href="">Chương Trình Thương Mại</a>
               </div>
               <div class="footer-col">
                 <p>Hỗ Trợ</p>
-                <a href="">Trợ Giúp + Câu Hỏi Thường Gặp</a>
                 <a href="">Theo Dõi Đơn Hàng</a>
                 <a href="">Vận Chuyển</a>
                 <a href="">Trả Hàng</a>
                 <a href="">Liên Hệ Hỗ Trợ</a>
               </div>
               <div class="footer-col">
-                <p>Câu Hỏi Về Cây Cảnh ?</p>
+                <p>Về Cây Cảnh</p>
                 <a href="">Mẹo Chăm Sóc Cây</a>
                 <a href="">Blog Về Cuộc Sống Xanh</a>
                 <a href="">Ứng Dụng Plantiquee</a>
-                <a href="">Liên Hệ Đội Ngũ Grow-How®</a>
               </div>
             </div>
           </div>

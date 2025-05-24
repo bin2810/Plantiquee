@@ -40,6 +40,7 @@ $tinhThanhVN = [
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Plantiquee Checkout</title>
+    <link rel="icon" type="image/png" href="../asset/img/logo-tab.png" />
   <link rel="stylesheet" href="../asset/css//checkout.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
@@ -51,9 +52,9 @@ $tinhThanhVN = [
       <div class="step-label">Thông tin &gt; Thanh toán</div>
 
       <div class="express">
-        <button class="express-btn shop">Shop Pay</button>
-        <button class="express-btn paypal">PayPal</button>
-        <button class="express-btn gpay">G Pay</button>
+        <button class="express-btn shop">Zalo Pay</button>
+        <button class="express-btn paypal">Momo</button>
+        <button class="express-btn gpay">ShopeePay</button>
       </div>
 
       <div class="separator">HOẶC</div>
@@ -64,7 +65,7 @@ $tinhThanhVN = [
         <h3>Địa chỉ thanh toán</h3>
         <select name="country_kh">
           <option>Chọn quốc gia</option>
-          <option value="Việt Nam">Việt Nam</option>
+          <option value="Việt Nam" selected>Việt Nam</option>
         </select>
 
         <div class="row">
@@ -89,12 +90,12 @@ $tinhThanhVN = [
         <button class="submit-btn" name="submit-checkout">Tiếp tục thanh toán</button>
       </form>
 
-      <div class="footer">
+      <!-- <div class="footer">
         <a href="#">Chính sách hoàn tiền</a>
         <a href="#">Vận chuyển</a>
         <a href="#">Bảo mật</a>
         <a href="#">Điều khoản</a>
-      </div>
+      </div> -->
     </div>
 
     <!-- Order Summary -->

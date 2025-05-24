@@ -7,6 +7,17 @@
   $stmt->execute();
   $danhmuc = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+
+  if (isset($_SESSION['username'])) {
+  if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 300)) {
+    session_unset();
+    session_destroy();
+    header("Location: page/login.php?error=sessiontimeout");
+    exit();
+  }
+  $_SESSION['LAST_ACTIVITY'] = time();
+}
+
 ?>
 <div class="main_cart">
           <div class="overlay" id="overlay" onclick="toggleCart()"></div>
@@ -182,4 +193,9 @@
             </div>
           </div>
         </div>
+        <script>
+    setTimeout(function () {
+        window.location.href = "page/logout.php";
+    }, 1200000);
+</script>
       </header>

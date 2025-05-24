@@ -63,9 +63,9 @@
     cursor: pointer;
   }
   
-  .shop { background-color: #5a31f4; }
-  .paypal { background-color: #ffc439; color: black; }
-  .gpay { background-color: #000000; }
+  .shop { background-color: #008fe5; }
+  .paypal { background-color: #a50064; }
+  .gpay { background-color: #ee4d2d; }
   
   .separator {
     text-align: center;
