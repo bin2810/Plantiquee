@@ -1109,8 +1109,8 @@ main{
 
 .search_product_mains{
   position: fixed;
-  top: 16%;
-  z-index: 999999;
+  top: 12%;
+  z-index: 9999;
   background-color: var(--bgnav-color);
   display: flex;
   justify-content: center;

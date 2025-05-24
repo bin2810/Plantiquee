@@ -8,8 +8,7 @@ window.addEventListener("scroll", function() {
 
     } else {
         navbar.style.top = "5rem";
-        boxSearch.style.top = "15%"
-
+        boxSearch.style.top = "12%"
     }
 });
 

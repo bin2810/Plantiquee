@@ -7,6 +7,17 @@
   main{
     margin: 5rem 0;
   }
+  .search_product_mains{
+  position: fixed;
+  top: 16%;
+  z-index: 999;
+  background-color: var(--bgnav-color);
+  display: flex;
+  justify-content: center;
+  padding: 1.4rem;
+  transition: top 0/3s ease-in-out;
+  margin-top: 20px;
+}
 }
 @media (max-width: 1220px) {
   .container-center {
